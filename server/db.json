@@ -1,0 +1,270 @@
+{
+  "users": [
+    {
+      "email": "getbackers0308@gmail.com",
+      "password": "$2a$10$qoHFj8uLQx1NA8OPJ6pWSOQlxp.sPl8r5iyB4TeSG.E/RlIf2m22e",
+      "id": 1,
+      "role": "admin"
+    },
+    {
+      "email": "getbackers03082@gmail.com",
+      "password": "$2a$10$PqBJPnHt.59DP0Qy4FQmJ.4cmzthRnIZ/ypFwDkOABIJATfeMTc6K",
+      "id": 2,
+      "role": "user"
+    }
+  ],
+  "clinics": [
+    {
+      "id": 1,
+      "name": "Phòng khám Đa khoa Thành Công",
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Phòng khám Đa khoa Saigon Healthcare",
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653167_63e0702f354080.09719891.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Bệnh viện Hoàn Mỹ Bình Dương - Vạn Phúc 1",
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/11/1701253605_656711e55bbfb2.42919036.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Phòng khám chuyên khoa Song Quân",
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2022/07/1658305516_62d7bbec45a1a5.41099763.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Phòng khám Đa khoa Quốc tế Golden Healthcare",
+      "image": "https://cdn-healthcare.hellohealthgroup.com/hospitals/vn/phong-kham-da-khoa-quoc-te-golden-healthcare20220211.png"
+    },
+    {
+      "id": 6,
+      "name": "Bệnh viện Quốc tế Hoàn Mỹ Đồng Nai",
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/11/1701070310_656445e67847b6.14685031.jpg"
+    }
+  ],
+  "departments": [
+    {
+      "id": 1,
+      "name": "Đa Khoa",
+      "clinic_id": [1, 2, 3]
+    },
+    {
+      "id": 2,
+      "name": "Nha Khoa",
+      "clinic_id": [1, 2, 3]
+    },
+    {
+      "id": 3,
+      "name": "Da Liễu",
+      "clinic_id": [1, 2, 3]
+    },
+    {
+      "id": 4,
+      "name": "Nhãn Khoa",
+      "clinic_id": [1, 2, 3]
+    },
+    {
+      "id": 5,
+      "name": "Sản - Phụ Khoa",
+      "clinic_id": [1, 2, 3]
+    },
+    {
+      "id": 6,
+      "name": "Trị Liệu Thần Kinh Cột Sống",
+      "clinic_id": [1, 2, 3]
+    }
+  ],
+  "doctors": [
+    {
+      "id": 1,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "department_id": {
+        "id": 3,
+        "name": "Da Liễu",
+        "clinic_id": [1, 2, 3]
+      },
+      "name": "BS.CKI Vũ Thúy Bình",
+      "description": "Bác sĩ Chuyên khoa I Vũ Thúy Bình hiện là Bác sĩ Da liễu tại Phòng khám chuyên khoa Da liễu Doctor Acnes, Bác sĩ tốt nghiệp Chuyên khoa I Da liễu Đại học Y dược TPHCM. Ngoài ra, Bác sĩ Bình nhận được nhiều chứng chỉ y khoa như chứng chỉ ứng dụng laser và ánh sáng trong thẩm mỹ và điều trị bệnh, chứng chỉ tiêm vi điểm mesotherapy trong thẩm mỹ. Bác sĩ Bình có nhiều năm kinh nghiệm trong tư vấn và điều trị mụn trứng cá và các vấn đề liên quan, kinh nghiệm điều trị chuyên sâu sẹo mụn, sẹo lồi, sẹo rỗ và các bệnh lý da liễu khác như viêm da dị ứng, viêm da tiết bã, nám da, mụn thịt...",
+      "price": 100000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684828082_646c6fb2045d63.74308483.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "department_id": {
+        "id": 2,
+        "name": "Nha Khoa",
+        "clinic_id": [1, 2, 3]
+      },
+      "name": "BS.CKI Trần Thị Mỹ Nga",
+      "description": "Bác sĩ Trần Thị Mỹ Nga tốt nghiệp chuyên ngành Răng Hàm Mặt trường Đại học Y Dược TP.HCM. Bác sĩ hiện đang là bác sĩ điều trị, chuyên gia về các lĩnh vực như Niềng răng chỉnh nha, Nha khoa tổng quát tại phòng khám Nha khoa Trồng Răng Sài Gòn.",
+      "price": 100000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684826602_646c69ea4c9a07.96452307.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "department_id": {
+        "id": 1,
+        "name": "Đa Khoa",
+        "clinic_id": [1, 2, 3]
+      },
+      "name": "BS.CKI Hồ Thanh Tiểng",
+      "description": "Bác sĩ Chuyên khoa I Hồ Thanh Tiểng hiện đang đảm nhiệm vai trò Bác sĩ chuyên khoa Nội tổng hợp kiêm Giám đốc chuyên môn và là Trưởng khoa Bác sĩ gia đình tại Phòng khám Đa khoa Thành Công.",
+      "price": 200000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684835824_646c8df08ab6a1.31785038.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "department_id": {
+        "id": 4,
+        "name": "Nhãn Khoa",
+        "clinic_id": [1, 2, 3]
+      },
+      "name": "BS.CKII Nguyễn Hoàng Cẩn",
+      "description": "Bác sĩ chuyên khoa II Nguyễn Hoàng Cẩn từng giữ chức Giám đốc chuyên môn tại bệnh viện Mắt Quốc tế Hoàn Mỹ và Trưởng phòng chỉ đạo tuyến bệnh viện Mắt Thành phố Hồ Chí Minh. Hiện tại, bác sĩ đang là cố vấn chuyên môn cao cấp tại trung tâm Mắt Quốc tế Phương Đông.",
+      "price": 500000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684835480_646c8c9899da85.74231415.jpg?w=256&q=100"
+    },
+    {
+      "id": 5,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "department_id": {
+        "id": 5,
+        "name": "Sản - Phụ Khoa",
+        "clinic_id": [1, 2, 3]
+      },
+      "name": "BS.CKI Vũ Thị Mai",
+      "description": "Bác sĩ Chuyên khoa I Vũ Thị Mai hiện đang giữ vai trò Giám đốc Phòng khám Dr.Marie Hà Nội 01.",
+      "price": 100000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/07/1689649149_64b5fffd3aa532.15880727.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "department_id": {
+        "id": 6,
+        "name": "Trị Liệu Thần Kinh Cột Sống",
+        "clinic_id": [1, 2, 3]
+      },
+      "name": "Y sĩ Đinh Công Vinh",
+      "description": "Y sĩ Đinh Công Vinh là một trong số các bác sĩ đông y giỏi với hơn 5 năm kinh nghiệm trong công tác Châm cứu và tập Vật lý trị liệu cho hơn 3,000 bệnh nhân cả trong và ngoài nước. Hiện nay, y sĩ đang công tác với vai trò bác sĩ điều trị tại phòng khám Y học cổ truyền Sài Gòn..",
+      "price": 100000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684834107_646c873b0602b5.34573672.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    }
+  ]
+}
