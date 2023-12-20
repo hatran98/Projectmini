@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import Datetime from "../commons/Datetime";
 import Button from "../commons/Button";
-import { day, worktime, time } from "../../helpers/WorkTime";
+import { timemorning, timeafternoon } from "../../helpers/WorkTime";
 function Booking({ name }) {
   const [activeButton, setActiveButton] = useState(1);
   const [activeButton2, setActiveButton2] = useState(1);
+  const [activeButton3, setActiveButton3] = useState(null);
+  const [checkActive, setCheckActive] = useState(false);
+  const [selectedDatetime, setSelectedDatetime] = useState(null);
+
+  const handleDatetimeChange = (selectedDatetime) => {
+    setSelectedDatetime(selectedDatetime);
+  };
 
   return (
     <div>
@@ -46,31 +53,65 @@ function Booking({ name }) {
         <div className="text-sm">Vui lòng lựa chọn lịch khám bên dưới</div>
         <div>
           <p>Thời gian</p>
-          <Datetime />
-          <div className="flex justify-between border-b-[1px]">
-            <Button
-              keys={1}
-              title={"Sáng"}
-              setActiveButton={setActiveButton2}
-              isActive={activeButton2 === 1}
-            />
-            <Button
-              keys={2}
-              title={"Chiều"}
-              setActiveButton={setActiveButton2}
-              isActive={activeButton2 === 2}
-            />
-          </div>
-          {time.map((t) => (
-            <button
-              className="border-2 p-2 rounded bg-white text-sm w-1/3"
-              key={t.id}
-            >
-              {t.start} - {t.end}{" "}
-            </button>
-          ))}
+          <Datetime onChange={handleDatetimeChange} />
+          {selectedDatetime && (
+            <>
+              <div className="flex justify-between border-b-[1px]">
+                <Button
+                  keys={1}
+                  title={"Sáng"}
+                  setActiveButton={setActiveButton2}
+                  isActive={activeButton2 === 1}
+                  setCheckActive={setCheckActive}
+                  checkActive={false}
+                />
+                <Button
+                  keys={2}
+                  title={"Chiều"}
+                  setActiveButton={setActiveButton2}
+                  isActive={activeButton2 === 2}
+                  setCheckActive={setCheckActive}
+                  checkActive={true}
+                />
+              </div>
+              <div className="flex flex-wrap justify-between">
+                {!checkActive
+                  ? timemorning.map((t) => (
+                      <button
+                        className={`border-2 p-2 rounded-xl bg-white text-sm w-1/2 mt-2 ${
+                          activeButton3 === t.id ? "bg-blue-400 text-white" : ""
+                        }`}
+                        key={t.id}
+                        onClick={() => setActiveButton3(t.id)}
+                      >
+                        {t.start} - {t.end}{" "}
+                      </button>
+                    ))
+                  : timeafternoon.map((t) => (
+                      <button
+                        className={`border-2 p-2 rounded-xl bg-white text-sm w-1/2 mt-2 ${
+                          activeButton3 === t.id ? "bg-blue-400 text-white" : ""
+                        }`}
+                        key={t.id}
+                        onClick={() => setActiveButton3(t.id)}
+                      >
+                        {t.start} - {t.end}{" "}
+                      </button>
+                    ))}
+              </div>
+            </>
+          )}
         </div>
-        <button className="bg-gray-300">Đặt lịch hẹn</button>
+        <div className="flex justify-center mt-3">
+          <button
+            className={`bg-gray-300 w-56 h-12 rounded ${
+              activeButton3 ? "bg-blue-600 text-white " : ""
+            }`}
+            disabled={!activeButton3}
+          >
+            Đặt lịch hẹn
+          </button>
+        </div>
       </div>
     </div>
   );

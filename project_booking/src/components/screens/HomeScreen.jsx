@@ -12,11 +12,9 @@ import Image from "../commons/Image";
 import { Images } from "../../helpers/Images";
 import CardDoctor from "../commons/CardDoctor";
 import { useDoctor } from "../../hooks/doctor";
-import { useClinic } from "../../hooks/clinic";
 
 function HomeScreen() {
   const { doctors } = useDoctor();
-  const { clinic } = useClinic();
   return (
     <div>
       <Navbar />
@@ -80,13 +78,7 @@ function HomeScreen() {
           text="bg-blue-300"
         />
       </section>
-      <section className="max-w-6xl mx-auto">
-        <Category
-          array={clinic}
-          content="Danh sách bệnh viện"
-          category="benh-vien"
-        />
-      </section>
+
       <section className="mx-auto container max-w-6xl mt-2 flex">
         <Button className="mr-2 bg-blue-200 text-blue-500 rounded-xl w-44 h-10">
           Bài viết nổi bật

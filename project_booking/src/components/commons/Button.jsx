@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Button({ keys, title, setActiveButton, isActive }) {
+function Button({
+  keys,
+  title,
+  setActiveButton,
+  isActive,
+  setCheckActive,
+  checkActive,
+}) {
   const handleClick = () => {
     setActiveButton(keys);
+    setCheckActive(checkActive);
   };
 
   return (

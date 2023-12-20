@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import DetailPage from "./pages/DetailDoctor";
 import DetailHospital from "./pages/DetailHospital";
+import List from "./pages/List";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path={`/bac-si/:id`} element={<DetailPage />} />
         <Route path={`/benh-vien/:id`} element={<DetailHospital />} />
+        <Route path="/care/tat-ca/bac-si" element={<List />} />
       </Routes>
       <ToastContainer
         position="bottom-right"

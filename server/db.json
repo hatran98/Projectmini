@@ -18,63 +18,52 @@
       "id": 1,
       "name": "Phòng khám Đa khoa Thành Công",
       "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+    }
+  ],
+  "branch": [
+    {
+      "id": 1,
+      "name": "Chi nhánh cầu giấy",
+      "clinic_id": 1,
+      "address": "2QMM+G5X, P. Dịch Vọng Hậu, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam"
     },
     {
       "id": 2,
-      "name": "Phòng khám Đa khoa Saigon Healthcare",
-      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653167_63e0702f354080.09719891.jpg"
+      "name": "Chi nhánh bắc từ liêm",
+      "clinic_id": 1,
+      "address": "293 Phạm Văn Đồng, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội, Việt Nam"
     },
     {
       "id": 3,
-      "name": "Bệnh viện Hoàn Mỹ Bình Dương - Vạn Phúc 1",
-      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/11/1701253605_656711e55bbfb2.42919036.jpg"
-    },
-    {
-      "id": 4,
-      "name": "Phòng khám chuyên khoa Song Quân",
-      "image": "https://cdn-healthcare.hellohealthgroup.com/2022/07/1658305516_62d7bbec45a1a5.41099763.jpg"
-    },
-    {
-      "id": 5,
-      "name": "Phòng khám Đa khoa Quốc tế Golden Healthcare",
-      "image": "https://cdn-healthcare.hellohealthgroup.com/hospitals/vn/phong-kham-da-khoa-quoc-te-golden-healthcare20220211.png"
-    },
-    {
-      "id": 6,
-      "name": "Bệnh viện Quốc tế Hoàn Mỹ Đồng Nai",
-      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/11/1701070310_656445e67847b6.14685031.jpg"
+      "name": "Chi nhánh nam từ liêm",
+      "clinic_id": 1,
+      "address": "Số nhà 2 , ngõ 32 Đỗ Đức Dục , Nam Từ Liêm , Hà Nội"
     }
   ],
   "departments": [
     {
       "id": 1,
-      "name": "Đa Khoa",
-      "clinic_id": [1, 2, 3]
+      "name": "Đa Khoa"
     },
     {
       "id": 2,
-      "name": "Nha Khoa",
-      "clinic_id": [1, 2, 3]
+      "name": "Nha Khoa"
     },
     {
       "id": 3,
-      "name": "Da Liễu",
-      "clinic_id": [1, 2, 3]
+      "name": "Da Liễu"
     },
     {
       "id": 4,
-      "name": "Nhãn Khoa",
-      "clinic_id": [1, 2, 3]
+      "name": "Nhãn Khoa"
     },
     {
       "id": 5,
-      "name": "Sản - Phụ Khoa",
-      "clinic_id": [1, 2, 3]
+      "name": "Sản - Phụ Khoa"
     },
     {
       "id": 6,
-      "name": "Trị Liệu Thần Kinh Cột Sống",
-      "clinic_id": [1, 2, 3]
+      "name": "Trị Liệu Thần Kinh Cột Sống"
     }
   ],
   "doctors": [
@@ -85,10 +74,15 @@
         "name": "Phòng khám Đa khoa Thành Công",
         "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
       },
+      "branch": {
+        "id": 1,
+        "name": "Chi nhánh cầu giấy",
+        "clinic_id": 1,
+        "address": "2QMM+G5X, P. Dịch Vọng Hậu, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam"
+      },
       "department_id": {
         "id": 3,
-        "name": "Da Liễu",
-        "clinic_id": [1, 2, 3]
+        "name": "Da Liễu"
       },
       "name": "BS.CKI Vũ Thúy Bình",
       "description": "Bác sĩ Chuyên khoa I Vũ Thúy Bình hiện là Bác sĩ Da liễu tại Phòng khám chuyên khoa Da liễu Doctor Acnes, Bác sĩ tốt nghiệp Chuyên khoa I Da liễu Đại học Y dược TPHCM. Ngoài ra, Bác sĩ Bình nhận được nhiều chứng chỉ y khoa như chứng chỉ ứng dụng laser và ánh sáng trong thẩm mỹ và điều trị bệnh, chứng chỉ tiêm vi điểm mesotherapy trong thẩm mỹ. Bác sĩ Bình có nhiều năm kinh nghiệm trong tư vấn và điều trị mụn trứng cá và các vấn đề liên quan, kinh nghiệm điều trị chuyên sâu sẹo mụn, sẹo lồi, sẹo rỗ và các bệnh lý da liễu khác như viêm da dị ứng, viêm da tiết bã, nám da, mụn thịt...",
@@ -121,8 +115,13 @@
       },
       "department_id": {
         "id": 2,
-        "name": "Nha Khoa",
-        "clinic_id": [1, 2, 3]
+        "name": "Nha Khoa"
+      },
+      "branch": {
+        "id": 1,
+        "name": "Chi nhánh cầu giấy",
+        "clinic_id": 1,
+        "address": "2QMM+G5X, P. Dịch Vọng Hậu, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam"
       },
       "name": "BS.CKI Trần Thị Mỹ Nga",
       "description": "Bác sĩ Trần Thị Mỹ Nga tốt nghiệp chuyên ngành Răng Hàm Mặt trường Đại học Y Dược TP.HCM. Bác sĩ hiện đang là bác sĩ điều trị, chuyên gia về các lĩnh vực như Niềng răng chỉnh nha, Nha khoa tổng quát tại phòng khám Nha khoa Trồng Răng Sài Gòn.",
@@ -153,10 +152,15 @@
         "name": "Phòng khám Đa khoa Thành Công",
         "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
       },
+      "branch": {
+        "id": 2,
+        "name": "Chi nhánh bắc từ liêm",
+        "clinic_id": 1,
+        "address": "293 Phạm Văn Đồng, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội, Việt Nam"
+      },
       "department_id": {
         "id": 1,
-        "name": "Đa Khoa",
-        "clinic_id": [1, 2, 3]
+        "name": "Đa Khoa"
       },
       "name": "BS.CKI Hồ Thanh Tiểng",
       "description": "Bác sĩ Chuyên khoa I Hồ Thanh Tiểng hiện đang đảm nhiệm vai trò Bác sĩ chuyên khoa Nội tổng hợp kiêm Giám đốc chuyên môn và là Trưởng khoa Bác sĩ gia đình tại Phòng khám Đa khoa Thành Công.",
@@ -187,10 +191,15 @@
         "name": "Phòng khám Đa khoa Thành Công",
         "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
       },
+      "branch": {
+        "id": 2,
+        "name": "Chi nhánh bắc từ liêm",
+        "clinic_id": 1,
+        "address": "293 Phạm Văn Đồng, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội, Việt Nam"
+      },
       "department_id": {
         "id": 4,
-        "name": "Nhãn Khoa",
-        "clinic_id": [1, 2, 3]
+        "name": "Nhãn Khoa"
       },
       "name": "BS.CKII Nguyễn Hoàng Cẩn",
       "description": "Bác sĩ chuyên khoa II Nguyễn Hoàng Cẩn từng giữ chức Giám đốc chuyên môn tại bệnh viện Mắt Quốc tế Hoàn Mỹ và Trưởng phòng chỉ đạo tuyến bệnh viện Mắt Thành phố Hồ Chí Minh. Hiện tại, bác sĩ đang là cố vấn chuyên môn cao cấp tại trung tâm Mắt Quốc tế Phương Đông.",
@@ -205,10 +214,15 @@
         "name": "Phòng khám Đa khoa Thành Công",
         "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
       },
+      "branch": {
+        "id": 3,
+        "name": "Chi nhánh nam từ liêm",
+        "clinic_id": 1,
+        "address": "Số nhà 2 , ngõ 32 Đỗ Đức Dục , Nam Từ Liêm , Hà Nội"
+      },
       "department_id": {
         "id": 5,
-        "name": "Sản - Phụ Khoa",
-        "clinic_id": [1, 2, 3]
+        "name": "Sản - Phụ Khoa"
       },
       "name": "BS.CKI Vũ Thị Mai",
       "description": "Bác sĩ Chuyên khoa I Vũ Thị Mai hiện đang giữ vai trò Giám đốc Phòng khám Dr.Marie Hà Nội 01.",
@@ -239,10 +253,15 @@
         "name": "Phòng khám Đa khoa Thành Công",
         "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
       },
+      "branch": {
+        "id": 3,
+        "name": "Chi nhánh nam từ liêm",
+        "clinic_id": 1,
+        "address": "Số nhà 2 , ngõ 32 Đỗ Đức Dục , Nam Từ Liêm , Hà Nội"
+      },
       "department_id": {
         "id": 6,
-        "name": "Trị Liệu Thần Kinh Cột Sống",
-        "clinic_id": [1, 2, 3]
+        "name": "Trị Liệu Thần Kinh Cột Sống"
       },
       "name": "Y sĩ Đinh Công Vinh",
       "description": "Y sĩ Đinh Công Vinh là một trong số các bác sĩ đông y giỏi với hơn 5 năm kinh nghiệm trong công tác Châm cứu và tập Vật lý trị liệu cho hơn 3,000 bệnh nhân cả trong và ngoài nước. Hiện nay, y sĩ đang công tác với vai trò bác sĩ điều trị tại phòng khám Y học cổ truyền Sài Gòn..",
@@ -263,6 +282,318 @@
         {
           "id": 1,
           "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 1,
+        "name": "Chi nhánh cầu giấy",
+        "clinic_id": 1,
+        "address": "2QMM+G5X, P. Dịch Vọng Hậu, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 2,
+        "name": "Nha Khoa"
+      },
+      "name": "BS.CKI Nguyễn Thị Hương",
+      "description": "Bác sĩ chuyên khoa Nha khoa với nhiều năm kinh nghiệm trong lĩnh vực chỉnh nha và điều trị các vấn đề răng miệng.",
+      "price": 150000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684835509_646c8cb5154672.60967446.jpg",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 2005"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2010"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Khoa Nha khoa"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 2,
+        "name": "Chi nhánh bắc từ liêm",
+        "clinic_id": 1,
+        "address": "293 Phạm Văn Đồng, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 4,
+        "name": "Nhãn Khoa"
+      },
+      "name": "BS.CKII Trần Đức Minh",
+      "description": "Chuyên gia về các vấn đề liên quan đến mắt, có nhiều năm kinh nghiệm trong phòng khám Mắt Hoa Hồng.",
+      "price": 180000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684835571_646c8cf35dab69.03536347.jpg",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 2008"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2013"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Khoa Nhãn khoa"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 3,
+        "name": "Chi nhánh nam từ liêm",
+        "clinic_id": 1,
+        "address": "Số nhà 2 , ngõ 32 Đỗ Đức Dục , Nam Từ Liêm , Hà Nội"
+      },
+      "department_id": {
+        "id": 5,
+        "name": "Sản - Phụ Khoa"
+      },
+      "name": "BS.CKI Lê Minh Tuấn",
+      "description": "Chuyên gia về các vấn đề tim mạch và sức khỏe sinh sản, có nhiều năm kinh nghiệm tại phòng khám Tim Mạch Sức Khỏe.",
+      "price": 200000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684835599_646c8d0f29b3c4.11226345.jpg",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 2008"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2013"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Khoa Sản - Phụ Khoa"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 3,
+        "name": "Chi nhánh nam từ liêm",
+        "clinic_id": 1,
+        "address": "Số nhà 2 , ngõ 32 Đỗ Đức Dục , Nam Từ Liêm , Hà Nội"
+      },
+      "department_id": {
+        "id": 1,
+        "name": "Đa Khoa"
+      },
+      "name": "BS.CKII Phạm Thị Thu Hà",
+      "description": "Chuyên gia trong lĩnh vực Nội khoa, có kinh nghiệm điều trị nhiều loại bệnh lý phức tạp.",
+      "price": 160000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684836251_646c8f9b754627.51519142.jpg",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 2006"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2011"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Khoa Nội khoa"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 3,
+        "name": "Chi nhánh nam từ liêm",
+        "clinic_id": 1,
+        "address": "Số nhà 2 , ngõ 32 Đỗ Đức Dục , Nam Từ Liêm , Hà Nội"
+      },
+      "department_id": {
+        "id": 3,
+        "name": "Da Liễu"
+      },
+      "name": "BS.CKI Vũ Minh Hiển",
+      "description": "Chuyên gia trong lĩnh vực Da liễu, có nhiều thành công trong điều trị các vấn đề về da.",
+      "price": 170000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684823417_646c5d79370ef0.35286262.jpg",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 2007"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2012"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Khoa Da Liễu"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 1,
+        "name": "Chi nhánh cầu giấy",
+        "clinic_id": 1,
+        "address": "2QMM+G5X, P. Dịch Vọng Hậu, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 6,
+        "name": "Trị Liệu Thần Kinh Cột Sống"
+      },
+      "name": "BS.CKII Lê Thị Thanh Hương",
+      "description": "Chuyên gia về các vấn đề Trị Liệu Thần Kinh Cột Sống, có kỹ thuật cao trong phẫu thuật chỉnh hình răng.",
+      "price": 190000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684823692_646c5e8c169d81.17728687.jpg",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 2009"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2014"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "Chuyên gia Trị Liệu Thần Kinh Cột Sống"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 2,
+        "name": "Chi nhánh bắc từ liêm",
+        "clinic_id": 1,
+        "address": "293 Phạm Văn Đồng, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 6,
+        "name": "Trị Liệu Thần Kinh Cột Sống"
+      },
+      "name": "BS.CKII Nguyễn Thị Hương",
+      "description": "Chuyên gia về các vấn đề Trị Liệu Thần Kinh Cột Sống, có nhiều năm kinh nghiệm trong lĩnh vực này.",
+      "price": 200000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684816156_646c411c68ef89.87044154.jpg",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 2010"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2015"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "Chuyên gia Trị Liệu Thần Kinh Cột Sống"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 3,
+        "name": "Chi nhánh nam từ liêm",
+        "clinic_id": 1,
+        "address": "Số nhà 2 , ngõ 32 Đỗ Đức Dục , Nam Từ Liêm , Hà Nội"
+      },
+      "department_id": {
+        "id": 6,
+        "name": "Trị Liệu Thần Kinh Cột Sống"
+      },
+      "name": "BS.CKII Nguyễn Văn Hưng",
+      "description": "Chuyên gia về các vấn đề Trị Liệu Thần Kinh Cột Sống, có kinh nghiệm thực hành nhiều năm.",
+      "price": 180000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/06/1686123726_648034cee42990.66635229.jpg",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 2011"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2016"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "Chuyên gia Trị Liệu Thần Kinh Cột Sống"
         }
       ]
     }

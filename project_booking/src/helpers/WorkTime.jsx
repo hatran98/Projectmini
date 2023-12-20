@@ -42,7 +42,7 @@ export const day = [
   },
 ];
 
-export const time = [
+export const timemorning = [
   {
     id: 1,
     start: "07:30",
@@ -82,5 +82,38 @@ export const time = [
     id: 8,
     start: "11:00",
     end: "11:30",
+  },
+];
+
+export const timeafternoon = [
+  {
+    id: 9,
+    start: "13:00",
+    end: "13:30",
+  },
+  {
+    id: 10,
+    start: "13:30",
+    end: "14:00",
+  },
+  {
+    id: 11,
+    start: "14:00",
+    end: "14:30",
+  },
+  {
+    id: 12,
+    start: "14:30",
+    end: "15:00",
+  },
+  {
+    id: 13,
+    start: "15:00",
+    end: "15:30",
+  },
+  {
+    id: 14,
+    start: "15:30",
+    end: "16:00",
   },
 ];

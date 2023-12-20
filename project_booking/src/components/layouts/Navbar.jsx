@@ -17,15 +17,22 @@ function Navbar() {
             className="w-32"
           ></img>
         </Link>
+
         {!user.email ? (
-          <div className="gap-2">
+          <div className="gap-2 flex sm:flex-row justify-between">
+            <Link to="/login">
+              <Button className="border-none">Đặt lịch với bác sĩ</Button>
+            </Link>
             <Link to="/login">
               <Button className="bg-blue-500 text-white">Đăng nhập</Button>
             </Link>
           </div>
         ) : (
           <div className="sm:gap-3 flex flex-col sm:flex-row">
-            <p>{user.email}</p>
+            <Link to="/login">
+              <Button className="border-none">Đặt lịch với bác sĩ</Button>
+            </Link>
+            <p className="sm:mt-[0.1rem]">{user.email}</p>
             <Link to="/">
               <Button
                 className="bg-blue-500 text-white"
