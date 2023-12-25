@@ -1,17 +1,7 @@
-import useSearchNavigation from "../../hooks/search";
 import { useBranch } from "../../hooks/branch";
 import { useDepartment } from "../../hooks/department";
 
-function Search() {
-  const {
-    search,
-    setSearch,
-    selectedBranch,
-    setSelectedBranch,
-    selectedDepartment,
-    setSelectedDepartment,
-    handleSearch,
-  } = useSearchNavigation();
+function Search({ handleSearch, searchParams, setSearchParams }) {
   const { branch } = useBranch();
   const { department } = useDepartment();
 
@@ -34,8 +24,9 @@ function Search() {
       <div className="flex h-12 justify-center gap-4 mt-4 max-w-4xl ml-4">
         <select
           className="text-base"
-          value={selectedBranch}
-          onChange={(e) => setSelectedBranch(e.target.value)}
+          onChange={(e) =>
+            setSearchParams((prev) => ({ ...prev, branch: e.target.value }))
+          }
         >
           <option selected value="">
             Tất cả vị trí
@@ -47,8 +38,12 @@ function Search() {
         <div className="border rounded h-12 flex w-full">
           <select
             className="text-base"
-            value={selectedDepartment}
-            onChange={(e) => setSelectedDepartment(e.target.value)}
+            onChange={(e) =>
+              setSearchParams((prev) => ({
+                ...prev,
+                department: e.target.value,
+              }))
+            }
           >
             <option value="" selected>
               Tất cả chuyên khoa
@@ -60,14 +55,15 @@ function Search() {
           <input
             placeholder="Tìm kiếm với tên bác sĩ"
             className="border-none text-base w-full"
-            onChange={(e) => setSearch(e.target.value)}
-            value={search}
+            onChange={(e) =>
+              setSearchParams((prev) => ({ ...prev, search: e.target.value }))
+            }
           ></input>
         </div>
         <div>
           <button
             className="h-12 border rounded w-32 bg-blue-500 text-white"
-            onClick={handleSearch}
+            onClick={() => handleSearch(searchParams)}
           >
             Tìm kiếm
           </button>

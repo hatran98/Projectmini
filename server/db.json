@@ -1,16 +1,34 @@
 {
   "users": [
     {
+      "email": "getbackers03084@gmail.com",
+      "password": "$2a$10$LcxMJUpBYdvKxmFf0T0Q/.OGNlJqVVuZQu/1vFe7Rdp2pPnNbcXwm",
+      "name": "Hà Trần",
+      "phone": "",
+      "address": "",
+      "image": "http://res.cloudinary.com/tranvanha/image/upload/v1703219930/lhffpbenjnmpyeiftkr1.jpg",
+      "role": "user",
+      "id": 1
+    },
+    {
       "email": "getbackers0308@gmail.com",
-      "password": "$2a$10$qoHFj8uLQx1NA8OPJ6pWSOQlxp.sPl8r5iyB4TeSG.E/RlIf2m22e",
-      "id": 1,
-      "role": "admin"
+      "password": "$2a$10$uUJcQQNdEOKfJJyyERq8heQ11JVd5zrgxcg7hG4sX477tP.ye.9Mq",
+      "name": "Hà Trần 4",
+      "phone": "0396071515",
+      "address": "Quảng Ninh",
+      "image": "http://res.cloudinary.com/tranvanha/image/upload/v1703220200/cctk9zlavlcrqj6zwezx.jpg",
+      "role": "user",
+      "id": 2
     },
     {
       "email": "getbackers03082@gmail.com",
-      "password": "$2a$10$PqBJPnHt.59DP0Qy4FQmJ.4cmzthRnIZ/ypFwDkOABIJATfeMTc6K",
-      "id": 2,
-      "role": "user"
+      "password": "$2a$10$IxSSQ8bsjykvtyOVJ8JWSu1sEd4zd5/h6288nKH2lwO7GVu7oxLeq",
+      "name": "Hà Trần ",
+      "phone": "0396071515",
+      "address": "Quảng Ninh",
+      "image": "https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg",
+      "role": "user",
+      "id": 3
     }
   ],
   "clinics": [
@@ -596,6 +614,758 @@
           "content": "Chuyên gia Trị Liệu Thần Kinh Cột Sống"
         }
       ]
+    },
+    {
+      "id": 15,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 1,
+        "name": "Chi nhánh cầu giấy",
+        "clinic_id": 1,
+        "address": "2QMM+G5X, P. Dịch Vọng Hậu, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 3,
+        "name": "Da Liễu"
+      },
+      "name": "BS. Trần Thị Phương Thảo",
+      "description": "Bác sĩ chuyên khoa I nội khoa Trần Thị Phương Thảo là một trong số các bác sĩ kỳ cựu với trình độ chuyên môn cao được nhiều bệnh nhân biết đến tại phòng khám Alocare.Bác sĩ Thảo hiện đã có hơn 25 năm kinh nghiệm trong việc thăm khám và điều trị cho các bệnh nhân mắc một số bệnh ngặt nghèo như HIV/AIDS, lậu, giang mai... Ngoài việc đưa ra các phát đồ phù hợp cho từng đối tượng bệnh nhân, BS. Thảo còn là một người bạn động viên tinh thần khi bệnh nhân cần chia sẻ những khó khăn phải đối mặt khi điều trị HIV.Từ những ca bệnh HIV được ghi nhận tại Việt Nam ở thập niên trước cho đến những ca bệnh của hiện tại, bác sĩ Thảo đã tự mình đúc kết những kinh nghiệm chăm sóc cho nhiều đối tượng bệnh nhân khác nhau. Đến năm 2014, nhờ những cống hiến tích cực dành cho sự phát triển của nền y học Việt Nam, bác sĩ được Bộ Y Tế trao tặng huân chương “Vì sức khoẻ nhân dân – Lương y như từ mẫu.",
+      "price": 100000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684828107_646c6fcbe13792.26454920.jpg"
+      },
+      "branch": {
+        "id": 1,
+        "name": "Chi nhánh cầu giấy",
+        "clinic_id": 1,
+        "address": "2QMM+G5X, P. Dịch Vọng Hậu, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 3,
+        "name": "Da Liễu"
+      },
+      "name": "BS.CKI Ninh Vũ Hoàng Tuấn",
+      "description": "Bác sĩ chuyên khoa I Ninh Vũ Hoàng Tuấn hiện là Bác sĩ Da liễu tại Phòng khám chuyên khoa Da liễu Doctor Acnes, Bác sĩ tốt nghiệp Chuyên khoa I Da liễu tại đại học Y khoa Phạm Ngọc Thạch. Ngoài ra bác sĩ có nhiều chứng chỉ y khoa như chứng chỉ ứng dụng Laser và ánh sáng trong thẫm mỹ và điều trị bệnh da tại bệnh viện da liễu TP. HCM, chứng chỉ kỹ thuật tiêm Botulinum Toxin trong thẫm mỹ.",
+      "price": 100000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684828107_646c6fcbe13792.26454920.jpg",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 1,
+        "name": "Chi nhánh cầu giấy",
+        "clinic_id": 1,
+        "address": "2QMM+G5X, P. Dịch Vọng Hậu, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 3,
+        "name": "Da Liễu"
+      },
+      "name": "TS.BS Vũ Thái Hà",
+      "description": "Tiến sĩ - Bác sĩ Vũ Thái Hà có gần 20 năm kinh nghiệm trong việc tư vấn và điều trị các vấn đề về da liễu như nám, mụn, lão hóa da,…Về quá trình đào tạo, bác sĩ tốt nghiệp Bác sĩ nội trú Da liễu, tốt nghiệp bậc Thạc sĩ tại trường Đại học Y Hà Nội. Sau đó, bác sĩ có khoảng thời gian thực tập tại Pháp về phương pháp điều trị các bệnh về da liễu, bệnh về tóc, bệnh về móng.Bác sĩ hiện đang đảm nhận vai trò Trưởng khoa Nghiên cứu và Ứng dụng công nghệ tế bào gốc tại Bệnh viện Da liễu Trung Ương. Bên cạnh đó, bác sĩ cũng là người phụ trách chuyên môn tại Phòng khám Da liễu Thái Hà.Với nền tảng chuyên môn cực kỳ vững chắc, bác sĩ chuyên thăm khám và điều trị các vấn đề bệnh lý liên quan đến da: viêm da cơ địa, viêm da tiếp xúc, viêm da dầu, thủy đậu, nám da, nám da,...Bên cạnh đó, bác sĩ cũng nhận tư vấn các vấn đề về sẹo, vấn đề về mụn, tình trạng lão hóa da, bớt sắc tố.",
+      "price": 100000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684812240_646c31d04a7830.36937920.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 1,
+        "name": "Chi nhánh cầu giấy",
+        "clinic_id": 1,
+        "address": "2QMM+G5X, P. Dịch Vọng Hậu, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 3,
+        "name": "Da Liễu"
+      },
+      "name": "TS.BS Trần Thịnh",
+      "description": "Tiến sĩ - Bác sĩ Trần Thịnh có gần 40 năm kinh nghiệm thăm khám và điều trị các vấn đề Da liễu. Tiến sĩ nguyên là Trưởng khoa Da liễu - Bệnh viện Da liễu TP.HCM và hiện đang là người điều hành phòng khám Chuyên khoa Da liễu Trần Thịnh. Về quá trình đào tạo, tiến sĩ tốt nghiệp chuyên ngành Da liễu tại trường Đại học Y Dược TP. HCM. Sau khi tốt nghiệp, tiến sĩ được giữ lại trường và đảm nhiệm vai trò bác sĩ, cán bộ phòng Khoa học kỹ thuật khoa Y. Đến năm 2009, dù đã là người dày dặn kinh nghiệm trong ngành, bác sĩ tiếp tục dành thời gian học thêm chuyên ngành về Quản lý Y tế tại trường Đại học Y Dược.",
+      "price": 100000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684828245_646c705539ba85.98865236.jpg",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "department_id": {
+        "id": 2,
+        "name": "Nha Khoa"
+      },
+      "branch": {
+        "id": 1,
+        "name": "Chi nhánh cầu giấy",
+        "clinic_id": 1,
+        "address": "2QMM+G5X, P. Dịch Vọng Hậu, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam"
+      },
+      "name": "ThS.BS Trần Nguyên Thị Thùy Nga",
+      "description": "Thạc sĩ - Bác sĩ Trần Nguyên Thị Thùy Nga là một trong những chuyên gia hàng đầu trong lĩnh vực Nha khoa. Đến nay, bác sĩ đã trải qua hơn 17 năm hoạt động trong ngành và đặc biệt sở hữu nhiều kinh nghiệm chuyên sâu trong kỹ thuật niềng răng, cấy ghép Implant, chỉnh hình và phục hình răng sứ.Trong quá trình hoạt động, ThS.BS Trần Nguyên Thị Thùy Nga không ngừng cố gắng nâng cao trình độ của bản thân bằng cách tham gia nhiều chương trình đào tạo và hội thảo chuyên khoa về lĩnh vực Nha khoa. Bác sĩ đã có cơ hội tu nghiệp tại các nước có nền Nha khoa phát triển hàng đầu trên thế giới như Mỹ, Pháp, Đức, Hàn Quốc,...",
+      "price": 100000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684826550_646c69b640a8a7.97244070.jpg",
+      "degree": [
+        {
+          "id": 3,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 4,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 2,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "department_id": {
+        "id": 2,
+        "name": "Nha Khoa"
+      },
+      "branch": {
+        "id": 1,
+        "name": "Chi nhánh cầu giấy",
+        "clinic_id": 1,
+        "address": "2QMM+G5X, P. Dịch Vọng Hậu, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam"
+      },
+      "name": "BS. Nguyễn Hữu Hoàng",
+      "description": "Bác sĩ Nguyễn Hữu Hoàng được biết đến là một trong những bác sĩ chuyên khoa Răng - Hàm - Mặt có chuyên môn và thành tích nổi bật tại Nha khoa Flora.Sau khi tốt nghiệp chính quy khoa Răng - Hàm - Mặt tại Đại học Y Dược Thành phố Hồ Chí Minh, bác sĩ Nguyễn Hữu Hoàng có khoảng thời gian công tác tại bệnh viện Răng Hàm Mặt Trung Ương Thành phố Hồ Chí Minh hơn 3 năm. Với những kinh nghiệm tích lũy được trong quá trình làm việc tại bệnh viện, bác sĩ đã tạo được lòng tin tuyệt đối với nhiều bệnh nhân. Từ khi chuyển công tác về Nha khoa Flora, bác sĩ đã gây được ấn tượng mạnh với hơn 1000 ca cấy ghép Implant, 850 ca điều trị cười hở lợi và 700 ca bọc răng sứ thành công.",
+      "price": 100000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684826215_646c6867996e10.45359189.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 3,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 4,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 2,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "department_id": {
+        "id": 2,
+        "name": "Nha Khoa"
+      },
+      "branch": {
+        "id": 1,
+        "name": "Chi nhánh cầu giấy",
+        "clinic_id": 1,
+        "address": "2QMM+G5X, P. Dịch Vọng Hậu, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam"
+      },
+      "name": "BS. Võ Văn Tự Hiến",
+      "description": "Bác sĩ Võ Văn Tự Hiến là nha sĩ Việt Nam đầu tiên được đào tạo tại Mỹ về cấy ghép nha khoa từ năm 1995 đến năm 1996. Sau đó, ông trở thành Trưởng khoa Cấy ghép Nha khoa đầu tiên của Bệnh viện Răng Hàm Mặt Trung Ương TP.HCM, từ khi thành lập vào năm 1999 đến tháng 5 năm 2011. Ngoài ra, Bác sĩ Tự Hiến còn giữ nhiều chức vụ quan trọng như: Chủ tịch Hội Cấy ghép Nha khoa HCM (HSDI); Chủ tịch Hiệp hội Chuyên gia Implant Quốc tế (ICOI) tại Việt Nam; Giám đốc Hội đồng Thẩm định Cao cấp (ICOI) Việt Nam, được bổ nhiệm bởi ICOI Khu Vực Châu Á Thái Bình Dương; Đại sứ Hiệp hội Chuyên gia Implant Quốc tế (ICOI) tại Việt Nam.",
+      "price": 100000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684829169_646c73f148f411.26219170.jpg",
+      "degree": [
+        {
+          "id": 3,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 4,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 2,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 2,
+        "name": "Chi nhánh bắc từ liêm",
+        "clinic_id": 1,
+        "address": "293 Phạm Văn Đồng, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 1,
+        "name": "Đa Khoa"
+      },
+      "name": "BS. Phùng Văn Thạnh",
+      "description": "Bác sĩ Nhãn khoa Phùng Văn Thạnh được đào tạo chuyên ngành tại Đại học Y Hà Nội, được các khách hàng tin tưởng nhờ trình độ chuyên môn cao trong việc thăm khám tư vấn và điều trị các tật khúc xạ, các bệnh lý kết giác mạc, thủy tinh thể..",
+      "price": 200000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684817296_646c45909d5a52.90483388.jpg",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 2,
+        "name": "Chi nhánh bắc từ liêm",
+        "clinic_id": 1,
+        "address": "293 Phạm Văn Đồng, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 1,
+        "name": "Đa Khoa"
+      },
+      "name": "BS.CKII Phan Tiến Hy",
+      "description": "Bác sĩ chuyên khoa II Phan Tiến Hy hiện đang giữ chức vụ Giám đốc chuyên môn Trung tâm Mắt Quốc Tế Phương Đông. Bác sĩ được đông đảo người dân và giới chuyên gia biết đến với tư cách là chuyên gia hàng đầu về phẫu thuật Phaco điều trị đục thủy tinh thể ở bệnh nhân tiểu đường, cao huyết áp, tim mạch,... Tên tuổi của bác sĩ gắn liền với những ca phẫu thuật Phaco điều trị đục thủy tinh thể phức tạp. Bằng nền tảng kinh nghiệm dày dặn, bác sĩ đã thực hiện thành công hơn 10.000 ca phẫu thuật đục thủy tinh thể các loại.",
+      "price": 200000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684835599_646c8d0f29b3c4.11226345.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 2,
+        "name": "Chi nhánh bắc từ liêm",
+        "clinic_id": 1,
+        "address": "293 Phạm Văn Đồng, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 4,
+        "name": "Nhãn Khoa"
+      },
+      "name": "BS.CKI Nguyễn Đức Trọng",
+      "description": "Sở hữu hơn 10 năm kinh nghiệm trong thăm khám và điều trị các bệnh lý về mắt, bác sĩ chuyên khoa I Nguyễn Đức Trọng được nhiều người nhớ đến với kinh nghiệm chuyên môn dày dặn và sự tận tụy với bệnh nhân.BS.CKI Nguyễn Đức Trọng hiện đang là Trưởng khoa Khúc xạ tại trung tâm Mắt Quốc tế Phương Đông. Tại đây, bác sĩ đã điều trị thành công cho hàng nghìn bệnh nhân mắc các bệnh lý bề mặt nhãn cầu và bệnh lý giác mạc chóp. Ngoài ra, BS.CKI Nguyễn Đức Trọng còn là một trong những phẫu thuật viên có năng lực nổi bật trong điều trị tật khúc xạ bằng các phương pháp Lasik, Femto-Lasik, Smile và Laser không chạm.Trong quá trình công tác, BS.CKI Nguyễn Đức Trọng tích cực tham dự nhiều hội nghị về Nhãn khoa ở cả trong lẫn ngoài nước. Từ đó, bác sĩ tích lũy được nền tảng kiến thức vững chắc cùng kinh nghiệm điều trị thực tiễn dày dặn.",
+      "price": 500000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684835630_646c8d2edee069.23450298.jpg"
+    },
+    {
+      "id": 24,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 2,
+        "name": "Chi nhánh bắc từ liêm",
+        "clinic_id": 1,
+        "address": "293 Phạm Văn Đồng, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 4,
+        "name": "Nhãn Khoa"
+      },
+      "name": "BS.CKI Đỗ Xuân Tân",
+      "description": "Bác sĩ Chuyên khoa I Đỗ Xuân Tân hiện đang giữ vai trò Trưởng khoa Mắt tại phòng khám Đa khoa Thành Công.Với nền tảng hơn 15 năm kinh nghiệm trong ngành, bác sĩ chuyên thực hiện các dịch vụ thăm khám và điều trị các vấn đề bệnh lý như chấp lẹo, mộng thịt, cũng như nhiều kỹ thuật phẫu thuật khác về mắt.Bác sĩ là một trong những chuyên gia có thâm niên làm việc lâu nhất tại phòng khám với khoảng thời gian kéo dài hơn 12 năm.Bên cạnh kinh nghiệm thực tiễn dày dặn, bác sĩ còn được biết đến với vai trò cố vấn về mặt chuyên môn, sẵn sàng tư vấn về các ca bệnh khó giúp bệnh nhân có được phương pháp điều trị phù hợp, vượt qua được tình trạng bệnh.",
+      "price": 300000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684836251_646c8f9b754627.51519142.jpg"
+    },
+    {
+      "id": 25,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 2,
+        "name": "Chi nhánh bắc từ liêm",
+        "clinic_id": 1,
+        "address": "293 Phạm Văn Đồng, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 4,
+        "name": "Nhãn Khoa"
+      },
+      "name": "BS.CKI Võ Văn Cường",
+      "description": "Bác sĩ Chuyên khoa I Võ Văn Cường hiện đang là bác sĩ chuyên khoa về Mắt công tác tại phòng khám Đa khoa Saigon Healthcare. Ngoài ra, bác sĩ cũng đang công tác tại bệnh viện Hoàn Hảo với vai trò tương tự.Với 15 năm kinh nghiệm trong lĩnh vực Nhãn khoa, bác sĩ là một trong những chuyên gia có kinh nghiệm dày dặn, chuyên thăm khám và tư vấn các tình trạng bệnh lý về mắt.Sở hữu nền tảng chuyên môn vững chắc cùng thái độ thăm khám tận tình tận tâm, bác sĩ luôn sẵn lòng tư vấn về tình trạng bệnh cũng như các biện pháp điều trị phù hợp, giúp bệnh nhân duy trì được đôi mắt sáng khỏe.",
+      "price": 250000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684835053_646c8aed457d52.91738419.jpg?w=256&q=100"
+    },
+    {
+      "id": 26,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 2,
+        "name": "Chi nhánh bắc từ liêm",
+        "clinic_id": 1,
+        "address": "293 Phạm Văn Đồng, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội, Việt Nam"
+      },
+      "department_id": {
+        "id": 4,
+        "name": "Nhãn Khoa"
+      },
+      "name": "BS.CKI Nguyễn Thị Phương Hà",
+      "description": "Một người thích giao tiếp, chăm sóc bệnh nhân một cách chu đáo, cẩn thận. Luôn cầu tiến học hỏi cập nhật những kiến thức mới. Tôn trọng đồng nghiệp và nhân viên.Chú trọng đến hòan cảnh, tâm lý của người bệnh và làm những gì có thể tốt nhất cho bệnh nhân, lấy khách hàng làm trung tâm.Kinh nghiệm quản lý điều hành phòng khám, quản lý chuyên môn, xây dựng văn hóa công ty với cốt lõi Phụng Sự và Yêu Thương. Kết nối cộng đồng và nâng cao tính nhân văn. Đào tạo hướng dẫn tôn trọng thế hệ trẻ.Bác sĩ Nguyễn Thị Phương Hà hiện đang giữ chức vụ CEO của Trung tâm mắt Sài Gòn Hikari. Với bề dày kinh nghiệm tại Đại Học Y Dược TP.HCM và Đại Học Y Khoa Phạm Ngọc Thạch, cũng như nhận nhiều chứng chỉ chuyên ngành nhãn khoa, bác sĩ Hà vẫn không ngừng cập nhật những kiến thức y khoa tân tiến, để có thể mang đến cho bệnh nhân dịch vụ tốt nhất.",
+      "price": 250000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684823692_646c5e8c169d81.17728687.jpg?w=256&q=100"
+    },
+    {
+      "id": 27,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 3,
+        "name": "Chi nhánh nam từ liêm",
+        "clinic_id": 1,
+        "address": "Số nhà 2 , ngõ 32 Đỗ Đức Dục , Nam Từ Liêm , Hà Nội"
+      },
+      "department_id": {
+        "id": 5,
+        "name": "Sản - Phụ Khoa"
+      },
+      "name": "BS.CKI Nguyễn Thị Ngọc Dung",
+      "description": "Bác sĩ chuyên khoa I Nguyễn Thị Ngọc Dung là một trong những bác sĩ Sản - Phụ khoa có tiếng tại Thành phố Hồ Chí Minh với hơn 11 năm kinh nghiệm, từng làm việc tại bệnh viện Từ Dũ.Về quá trình đào tạo, BS.CKI Nguyễn Thị Ngọc Dung tốt nghiệp Bác sĩ Đa khoa tại Đại học Y Dược Thành phố Hồ Chí Minh. Sau đó, bác sĩ định hướng chuyên sâu về lĩnh vực Sản - Phụ khoa và đạt được học hàm Thạc sĩ tại ngôi trường đào tạo Y khoa danh giá này. Với những kinh nghiệm tích lũy được, BS.CKI Nguyễn Thị Ngọc Dung đến nay đã sở hữu nhiều kinh nghiệm trong lĩnh vực điều trị các bệnh phụ khoa, đỡ sinh, mổ sinh, theo dõi thai và sàng lọc dị tật, tư vấn hiếm muộn, tư vấn ngừa thai, tầm soát ung thư vú, ung thư cổ tử cung và thực hiện thẩm mỹ vùng kín.Đặt sức khỏe của người bệnh lên hàng đầu, bác sĩ Dung luôn nỗ lực hết mình trong từng ca thăm khám và hỗ trợ thai phụ vượt cạn. Niềm vui, niềm hạnh phúc của người dân khi khỏi bệnh hay khi nhìn thấy những sinh linh bé bỏng chào đời chính là động lực thôi thúc bác sĩ không ngừng cố gắng và gắn bó với nghề.",
+      "price": 200000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/07/1689649586_64b601b27225c1.08452613.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Đại học Y Dược TP.HCM"
+        },
+        {
+          "id": 2,
+          "content": "Đại học Y Dược TP.HCM"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "Bác sĩ Sản - Phụ khoa"
+        },
+        {
+          "id": 2,
+          "content": "Bác sĩ"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 3,
+        "name": "Chi nhánh nam từ liêm",
+        "clinic_id": 1,
+        "address": "Số nhà 2 , ngõ 32 Đỗ Đức Dục , Nam Từ Liêm , Hà Nội"
+      },
+      "department_id": {
+        "id": 5,
+        "name": "Sản - Phụ Khoa"
+      },
+      "name": "BS.CKI Trần Thị Kim Liên",
+      "description": "Sau gần 14 năm công tác và làm việc tại bệnh viện Từ Dũ, bác sĩ chuyên khoa I Trần Thị Kim Liên sở hữu nhiều kinh nghiệm chuyên sâu trong thăm khám và điều trị các bệnh lý Sản - Phụ khoa thường gặp, cũng như tư vấn vô sinh hiếm muộn và kế hoạch hóa gia đình.Về quá trình đào tạo, BS.CKI Trần Thị Kim Liên tốt nghiệp Bác sĩ Đa khoa tại trường Đại học Y Dược Huế năm 2004. Sau đó, với mong muốn cống hiến hết mình cho sự nghiệp, bác sĩ tiếp tục nâng cao tay nghề với bằng Bác sĩ chuyên khoa I Sản Phụ khoa tại trường Đại học Y Dược Thành phố Hồ Chí Minh. Trong suốt quá trình hoạt động, BS.CKI Trần Thị Kim Liên không ngừng cập nhật và áp dụng những kiến thức, kỹ thuật y khoa mới để mang đến cho người dân những dịch vụ y tế chất lượng hoàn hảo.Ngoài hết mình trong quá trình thăm khám, BS.CKI Trần Thị Kim Liên còn tận tình tư vấn những băn khoăn, thắc mắc của chị em phụ nữ về các vấn đề liên quan đến Sản - Phụ khoa. Từ đó, khách hàng có những phương án thích hợp để cải thiện tình hình đang mắc phải cũng như hiểu rõ hơn về tình trạng sức khỏe sinh sản của bản thân.",
+      "price": 200000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684836579_646c90e3e8a144.17677563.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Đại học Y Dược TP.HCM"
+        },
+        {
+          "id": 2,
+          "content": "Đại học Y Dược TP.HCM"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "Bác sĩ Sản - Phụ khoa"
+        },
+        {
+          "id": 2,
+          "content": "Bác sĩ"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 3,
+        "name": "Chi nhánh nam từ liêm",
+        "clinic_id": 1,
+        "address": "Số nhà 2 , ngõ 32 Đỗ Đức Dục , Nam Từ Liêm , Hà Nội"
+      },
+      "department_id": {
+        "id": 5,
+        "name": "Sản - Phụ Khoa"
+      },
+      "name": "BS.CKI Tăng Quang Thái",
+      "description": "BS.CKI Tăng Quang Thái có hơn 13 năm kinh nghiệm chuyên về lĩnh vực Sản - Phụ khoa, Hiếm muộn.Bác sĩ Quang Thái từng có khoảng thời gian làm việc tại Bệnh viện Hùng Vương, đảm nhận vai trò Phó Giám đốc Chuyên môn tại Bệnh viện Phương Chi, Trưởng khoa Hiếm muộn Hệ thống IVF Mỹ Đức, Bệnh viện Quốc tế Mỹ, …Bên cạnh đó, bác sĩ đã từng có khoảng thời gian tu nghiệp tại Áo, Singapore, Hongkong, luôn cập nhật nền tảng kiến thức về các lĩnh vực Sản - Phụ khoa, hiếm muộn.",
+      "price": 200000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684836579_646c90e3e8a144.17677563.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Đại học Y Dược TP.HCM"
+        },
+        {
+          "id": 2,
+          "content": "Đại học Y Dược TP.HCM"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "Bác sĩ Sản - Phụ khoa"
+        },
+        {
+          "id": 2,
+          "content": "Bác sĩ"
+        },
+        {
+          "id": 3,
+          "content": "Phó Giám đốc"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 3,
+        "name": "Chi nhánh nam từ liêm",
+        "clinic_id": 1,
+        "address": "Số nhà 2 , ngõ 32 Đỗ Đức Dục , Nam Từ Liêm , Hà Nội"
+      },
+      "department_id": {
+        "id": 6,
+        "name": "Trị Liệu Thần Kinh Cột Sống"
+      },
+      "name": "BS. Tim Gallivan",
+      "description": "Sau một chấn thương thể thao khi mới hơn hai mươi tuổi, Bác sĩ Tim bắt đầu biết đến chuyên khoa trị liệu thần kinh cột sống và nhận ra niềm đam mê đích thực của mình. Kể từ đó Bác sĩ Tim đã không ngừng học hỏi và chia sẻ với mọi người về các phương thức chữa bệnh theo tự nhiên.",
+      "price": 800000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684826705_646c6a51afcc46.51961988.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "clinic_id": {
+        "id": 1,
+        "name": "Phòng khám Đa khoa Thành Công",
+        "image": "https://cdn-healthcare.hellohealthgroup.com/2023/02/1675653777_63e07291aabbc3.35352105.jpg"
+      },
+      "branch": {
+        "id": 3,
+        "name": "Chi nhánh nam từ liêm",
+        "clinic_id": 1,
+        "address": "Số nhà 2 , ngõ 32 Đỗ Đức Dục , Nam Từ Liêm , Hà Nội"
+      },
+      "department_id": {
+        "id": 6,
+        "name": "Trị Liệu Thần Kinh Cột Sống"
+      },
+      "name": "BS. Tim Gallivan",
+      "description": "Đối với Bác sĩ Ryan, duy trì một sức khỏe tốt sẽ giúp bạn hoàn thành các dự định quan trọng trong cuộc sống. Khi đến điều trị với Bác sĩ Ryan, bệnh nhân sẽ yên tâm về chất lượng điều trị toàn diện, tư vấn dinh dưỡng, hướng dẫn các bài tập thể dục để giữ cơ thể khỏe mạnh và cân đối.",
+      "price": 800000,
+      "rate": null,
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684826773_646c6a9525bf39.84394682.jpg?w=256&q=100",
+      "degree": [
+        {
+          "id": 1,
+          "content": "Bằng bác sĩ chuyên khoa 1 năm 1989"
+        },
+        {
+          "id": 2,
+          "content": "Bằng bác sĩ chuyên khoa 2 năm 2002"
+        }
+      ],
+      "experience": [
+        {
+          "id": 1,
+          "content": "BS Trưởng khoa Tai mũi họng"
+        }
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "doctor_id": 2,
+      "doctor_name": "BS.CKI Trần Thị Mỹ Nga",
+      "user_id": 2,
+      "datetime": "2023-12-26",
+      "timebooking": "8:30 - 9:00",
+      "clinic_name": "Phòng khám Đa khoa Thành Công",
+      "department_name": "Nha Khoa",
+      "branch_id": "Chi nhánh cầu giấy",
+      "price": 100000,
+      "status": "request",
+      "name": "Hà Trần 4",
+      "phone": "0396071515",
+      "email": "getbackers0308@gmail.com",
+      "id": 1
+    },
+    {
+      "doctor_id": 2,
+      "doctor_name": "BS.CKI Trần Thị Mỹ Nga",
+      "user_id": 2,
+      "datetime": "2023-12-26",
+      "timebooking": "10:00 - 10:30",
+      "clinic_name": "Phòng khám Đa khoa Thành Công",
+      "department_name": "Nha Khoa",
+      "branch_id": "Chi nhánh cầu giấy",
+      "price": 100000,
+      "status": "request",
+      "name": "Hà Trần 4",
+      "phone": "0396071515",
+      "email": "getbackers0308@gmail.com",
+      "id": 2
+    },
+    {
+      "doctor_id": 21,
+      "doctor_name": "BS. Phùng Văn Thạnh",
+      "user_id": 2,
+      "datetime": "2023-12-26",
+      "timebooking": "8:30 - 9:00",
+      "clinic_name": "Phòng khám Đa khoa Thành Công",
+      "department_name": "Đa Khoa",
+      "branch_id": "Chi nhánh bắc từ liêm",
+      "price": 200000,
+      "status": "request",
+      "name": "Hà Trần 4",
+      "phone": "0396071515",
+      "email": "getbackers0308@gmail.com",
+      "id": 3
+    },
+    {
+      "doctor_id": 21,
+      "doctor_name": "BS. Phùng Văn Thạnh",
+      "user_id": 2,
+      "datetime": "2023-12-26",
+      "timebooking": "9:00 - 9:30",
+      "clinic_name": "Phòng khám Đa khoa Thành Công",
+      "department_name": "Đa Khoa",
+      "branch_id": "Chi nhánh bắc từ liêm",
+      "price": 200000,
+      "status": "request",
+      "name": "Hà Trần 4",
+      "phone": "0396071515",
+      "email": "getbackers0308@gmail.com",
+      "id": 4
+    },
+    {
+      "doctor_id": 21,
+      "doctor_name": "BS. Phùng Văn Thạnh",
+      "user_id": 2,
+      "datetime": "2023-12-26",
+      "timebooking": "10:00 - 10:30",
+      "clinic_name": "Phòng khám Đa khoa Thành Công",
+      "department_name": "Đa Khoa",
+      "branch_id": "Chi nhánh bắc từ liêm",
+      "price": 200000,
+      "status": "request",
+      "name": "Hà Trần 4",
+      "phone": "0396071515",
+      "email": "getbackers0308@gmail.com",
+      "id": 5
+    },
+    {
+      "doctor_id": 21,
+      "doctor_name": "BS. Phùng Văn Thạnh",
+      "user_id": 2,
+      "datetime": "2023-12-26",
+      "timebooking": "11:00 - 11:30",
+      "clinic_name": "Phòng khám Đa khoa Thành Công",
+      "department_name": "Đa Khoa",
+      "branch_id": "Chi nhánh bắc từ liêm",
+      "price": 200000,
+      "status": "request",
+      "name": "Hà Trần 4",
+      "phone": "0396071515",
+      "email": "getbackers0308@gmail.com",
+      "id": 6
     }
   ]
 }

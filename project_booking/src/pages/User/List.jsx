@@ -1,5 +1,5 @@
 import React from "react";
-import ListScreen from "../components/screens/ListScreen";
+import ListScreen from "../../components/screens/ListScreen";
 
 function List() {
   return (

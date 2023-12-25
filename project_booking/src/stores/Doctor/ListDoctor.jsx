@@ -11,3 +11,8 @@ export const clinicList = atom({
   key: "clinicList",
   default: [],
 });
+
+export const doctorFilter = atom({
+  key: "doctorFilter",
+  default: {},
+});

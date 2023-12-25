@@ -1,6 +1,5 @@
 import React from "react";
-
-function Button({
+function ButtonCustom({
   keys,
   title,
   setActiveButton,
@@ -23,4 +22,4 @@ function Button({
     </button>
   );
 }
-export default Button;
+export default ButtonCustom;

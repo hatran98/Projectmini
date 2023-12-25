@@ -5,8 +5,10 @@ import { User } from "../../stores/User/CheckUser";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { loginUser } from "../../axios/users";
+import { access_token } from "../../stores/Access_token/Access_token";
 function LoginUser() {
   const [user, setUser] = useRecoilState(User);
+  const [access_Token, setAccess_Token] = useRecoilState(access_token);
   const [error, setError] = useState({
     email: "",
     password: "",
@@ -20,17 +22,32 @@ function LoginUser() {
       })
         .then((res) => {
           if (res.status === 200) {
-            setUser(res.data.user);
-            toast.success("Đăng nhập thành công");
-            navigate("/");
-            localStorage.setItem(
-              "access_token",
-              JSON.stringify(res.data.accessToken)
-            );
-            setError({
-              email: "",
-              password: "",
-            });
+            const user = res.data.user;
+
+            if (user.role === "user" || user.role === "doctor") {
+              setUser(user);
+              toast.success("Đăng nhập thành công");
+              navigate("/");
+              localStorage.setItem(
+                "access_token",
+                JSON.stringify(res.data.accessToken)
+              );
+              setAccess_Token(res.data.accessToken);
+              setError({
+                email: "",
+                password: "",
+              });
+            } else if (user.role === "admin") {
+              navigate("/dashboard");
+              localStorage.setItem(
+                "access_token",
+                JSON.stringify(res.data.accessToken)
+              );
+              setError({
+                email: "",
+                password: "",
+              });
+            }
           }
         })
         .catch((err) => {

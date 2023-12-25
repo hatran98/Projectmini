@@ -1,152 +1,22 @@
 import { useRecoilState } from "recoil";
-import { doctorState, doctorsState } from "../stores/Doctor/ListDoctor";
-import { useEffect, useState } from "react";
 import {
-  getDoctorss,
-  getDoctorbyId,
-  getDoctorbyName,
-  getFilterDoctorByDepartment,
-  getFilterDoctorByBranch,
-  getFilterDoctorByDepartmentAndBranch,
-  getFilterDoctorByNameAndBranch,
-  getFilterDoctorByNameAndDepartment,
-  getFilterDoctorByNameAndDepartmentAndBranch,
-} from "../axios/doctors";
-export const useDoctor = (name, branch, department) => {
+  doctorState,
+  doctorsState,
+  doctorFilter,
+} from "../stores/Doctor/ListDoctor";
+import { useEffect, useState } from "react";
+import { getDoctorss, getDoctorbyId, filterDoctor } from "../axios/doctors";
+export const useDoctor = (name, branch, department, order) => {
   const [doctors, setDoctors] = useRecoilState(doctorsState);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    if (name && branch && department) {
-      getDoctorByNameAndDepartmentAndBranch();
-      return;
-    }
-    if (name && branch) {
-      getDoctorByNameAndBranch();
-      return;
-    }
-    if (name && department) {
-      getDoctorByNameAndDepartment();
-      return;
-    }
-    if (branch && department) {
-      getDoctorByBranchAndDepartment();
-      return;
-    }
-    if (branch) {
-      getDoctorByBranch();
-      return;
-    }
+    getDoctors();
+  }, [name, branch, department, order]);
 
-    if (department) {
-      getDoctorByDepartment();
-      return;
-    }
-
-    if (name) {
-      getDoctorsByName();
-      return;
-    } else {
-      getDoctors();
-      return;
-    }
-  }, [name, branch, department]);
-
-  const getDoctorByDepartment = async () => {
-    setLoading(true);
-    try {
-      const { data } = await getFilterDoctorByDepartment(department);
-      setDoctors(data);
-      setLoading(false);
-    } catch (e) {
-      console.log(e);
-      setLoading(false);
-    }
-  };
-
-  const getDoctorByBranch = async () => {
-    setLoading(true);
-    try {
-      const { data } = await getFilterDoctorByBranch(branch);
-      setDoctors(data);
-      setLoading(false);
-    } catch (e) {
-      console.log(e);
-      setLoading(false);
-    }
-  };
-
-  const getDoctorByBranchAndDepartment = async () => {
-    setLoading(true);
-    try {
-      const { data } = await getFilterDoctorByDepartmentAndBranch(
-        department,
-        branch
-      );
-      setDoctors(data);
-      setLoading(false);
-    } catch (e) {
-      console.log(e);
-      setLoading(false);
-    }
-  };
-
-  const getDoctorByNameAndBranch = async () => {
-    setLoading(true);
-    try {
-      const { data } = await getFilterDoctorByNameAndBranch(name, branch);
-      setDoctors(data);
-      setLoading(false);
-    } catch (e) {
-      console.log(e);
-      setLoading(false);
-    }
-  };
-
-  const getDoctorByNameAndDepartment = async () => {
-    setLoading(true);
-    try {
-      const { data } = await getFilterDoctorByNameAndDepartment(
-        name,
-        department
-      );
-      setDoctors(data);
-      setLoading(false);
-    } catch (e) {
-      console.log(e);
-      setLoading(false);
-    }
-  };
-
-  const getDoctorByNameAndDepartmentAndBranch = async () => {
-    setLoading(true);
-    try {
-      const { data } = await getFilterDoctorByNameAndDepartmentAndBranch(
-        name,
-        department,
-        branch
-      );
-      setDoctors(data);
-      setLoading(false);
-    } catch (e) {
-      console.log(e);
-      setLoading(false);
-    }
-  };
-  const getDoctorsByName = async () => {
-    setLoading(true);
-    try {
-      const { data } = await getDoctorbyName(name);
-      setDoctors(data);
-      setLoading(false);
-    } catch (e) {
-      console.log(e);
-      setLoading(false);
-    }
-  };
   const getDoctors = async () => {
     setLoading(true);
     try {
-      const { data } = await getDoctorss();
+      const { data } = await getDoctorss(name, branch, department, order);
       setDoctors(data);
       setLoading(false);
     } catch (e) {
@@ -159,7 +29,6 @@ export const useDoctor = (name, branch, department) => {
     loading,
     doctors,
     getDoctors,
-    getDoctorsByName,
   };
 };
 
@@ -184,5 +53,27 @@ export const useDoctorById = (id) => {
     loading,
     doctor,
     getDoctor,
+  };
+};
+export const useFilterDoctor = (id) => {
+  const [doctorFilter, setDoctorFilter] = useRecoilState(doctorFilter);
+  useEffect(() => {
+    getDoctor();
+  }, [id]);
+  const getDoctor = async () => {
+    setLoading(true);
+    try {
+      const { data } = await filterDoctor(id);
+      setDoctorFilter(data);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+    }
+  };
+  return {
+    doctorFilter,
+    getDoctor,
+    loading,
   };
 };

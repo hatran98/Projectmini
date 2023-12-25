@@ -3,15 +3,17 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CardDoctor from "../commons/CardDoctor";
+import { useNavigate } from "react-router-dom";
 
 function Category(props) {
-  const { content, array, text, category } = props;
+  const navigate = useNavigate();
+  const { content, array, text, category, slide } = props;
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToShow: slide,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,
@@ -19,7 +21,7 @@ function Category(props) {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -41,7 +43,15 @@ function Category(props) {
   };
   return (
     <div className="container max-w-6xl mx-auto">
-      <h2 className="text-xl font-bold mt-2"> {content} </h2>
+      <h2
+        className="text-xl font-bold mt-2 cursor-pointer"
+        onClick={() => {
+          navigate("/care/tat-ca/bac-si");
+        }}
+      >
+        {" "}
+        {content}{" "}
+      </h2>
       <Slider {...settings}>
         {array.length > 0 &&
           array.map((e) => (

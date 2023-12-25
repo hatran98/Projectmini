@@ -1,5 +1,4 @@
-import { instance } from "./config";
-
+import { instance, instance_token } from "./config";
 export const getUsers = () => {
   return instance.get("/users");
 };
@@ -11,9 +10,11 @@ export const getUser = (id) => {
 export const createUser = (data) => {
   return instance.post("/users", data);
 };
-
+export const updateImage = (id, data) => {
+  return instance_token.patch(`600/users/${id}`, data);
+};
 export const updateUser = (id, data) => {
-  return instance.put(`/users/${id}`, data);
+  return instance_token.patch(`600/users/${id}`, data);
 };
 
 export const deleteUser = (id) => {

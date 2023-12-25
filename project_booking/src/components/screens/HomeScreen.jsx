@@ -73,6 +73,7 @@ function HomeScreen() {
         </div>
         <Category
           category="bac-si"
+          slide={4}
           array={doctors}
           content="Danh sách bác sĩ"
           text="bg-blue-300"
