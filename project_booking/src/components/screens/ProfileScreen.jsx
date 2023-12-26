@@ -7,15 +7,36 @@ import { toast } from "react-toastify";
 import { useResetRecoilState } from "recoil";
 import { User } from "../../stores/User/CheckUser";
 import { useNavigate } from "react-router-dom";
-import { Button, Pagination, Table } from "antd";
+import { Button, Pagination, Table, Space } from "antd";
 import { useBooking } from "../../hooks/booking";
+import Swal from "sweetalert2";
 import Columns from "../../helpers/ColumnTable";
+import BaseModal from "../../helpers/BaseModal";
 function ProfileScreen() {
   const { user } = useUser();
   const [currentPage, setCurrentPage] = useState(1);
-  const { bookings, totalCount } = useBooking(user.id, currentPage);
+  const { bookings, totalCount, deleteBookings } = useBooking(
+    user.id,
+    currentPage
+  );
+  const [doctor, setDoctor] = useState({});
   const handlePageChange = (page) => {
     setCurrentPage(page);
+  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = (doctor) => {
+    setDoctor(doctor);
+    setIsModalOpen(true);
+  };
+  const isValidData = () => {
+    if (!inforUser.name || !inforUser.address || !inforUser.phone) {
+      toast.warning("Vui lòng điền đầy đủ thông tin.", {
+        position: "top-right",
+        autoClose: 5000,
+      });
+      return false;
+    }
+    return true;
   };
   const { uploadAvatar } = useUpload();
   const { updateInforUser } = useUpdateUser();
@@ -40,9 +61,11 @@ function ProfileScreen() {
   };
 
   const handleSubmit = () => {
-    const { password, ...rest } = inforUser;
-    updateInforUser(rest);
-    toast.success("Cập nhật thông tin thành công");
+    if (isValidData()) {
+      const { password, ...rest } = inforUser;
+      updateInforUser(rest);
+      toast.success("Cập nhật thông tin thành công");
+    }
   };
 
   const uploadImage = async (file) => {
@@ -93,7 +116,7 @@ function ProfileScreen() {
           <div className="relative">
             <img
               src={inforUser.image}
-              className="w-32 h-32 rounded-full mx-auto"
+              className="w-32 h-32 rounded-full mx-auto max-w-full max-h-full"
             ></img>
             {loading && (
               <div className="absolute right-10 top-0">Đang tải...</div>
@@ -154,12 +177,14 @@ function ProfileScreen() {
               <form className="flex flex-col">
                 <Input
                   label={"Họ và tên: "}
+                  placeholder="Họ và tên"
                   value={inforUser.name}
                   name="name"
                   onChange={handleChange}
                 />
                 <Input
                   label={"Email: "}
+                  placeholder="Email"
                   value={inforUser.email}
                   name="address"
                   onChange={handleChange}
@@ -167,12 +192,14 @@ function ProfileScreen() {
                 />
                 <Input
                   label={"Địa chỉ: "}
+                  placeholder="Địa chỉ"
                   value={inforUser.address}
                   name="address"
                   onChange={handleChange}
                 />
                 <Input
                   label={"Số điện thoại: "}
+                  placeholder="Số điện thoại"
                   value={inforUser.phone}
                   name="phone"
                   onChange={handleChange}
@@ -197,7 +224,63 @@ function ProfileScreen() {
           <div>
             <Table
               dataSource={bookings}
-              columns={Columns}
+              columns={[
+                ...Columns,
+                {
+                  title: "Hành động",
+                  dataIndex: "action",
+                  key: "action",
+                  render: (_, record) => (
+                    <Space size="middle">
+                      {record.status === "request" && (
+                        <i
+                          className="fa-solid fa-trash cursor-pointer hover:bg-blue-500 hover:text-white"
+                          onClick={() => {
+                            Swal.fire({
+                              title: "Are you sure?",
+                              text: "You won't be able to revert this!",
+                              icon: "warning",
+                              showCancelButton: true,
+                              confirmButtonColor: "#3085d6",
+                              cancelButtonColor: "#d33",
+                              confirmButtonText: "Yes, delete it!",
+                            }).then((result) => {
+                              if (result.isConfirmed) {
+                                if (record.status === "request") {
+                                  deleteBookings(record.id);
+                                  Swal.fire({
+                                    title: "Deleted!",
+                                    text: "Bạn huỷ lịch thành công",
+                                    icon: "success",
+                                  });
+                                  useBooking(user.id, currentPage);
+                                }
+                              } else {
+                                Swal.fire({
+                                  title: "Error!",
+                                  text: "Lịch đã được xác nhận , không thể huỷ.",
+                                  icon: "error",
+                                });
+                              }
+                            });
+                          }}
+                        ></i>
+                      )}
+                      <i
+                        className="fa-solid fa-eye text-blue-500 hover:bg-blue-500 hover:text-white cursor-pointer"
+                        onClick={() => {
+                          showModal(record);
+                        }}
+                      ></i>
+                      <BaseModal
+                        isModalOpen={isModalOpen}
+                        setIsModalOpen={setIsModalOpen}
+                        doctor={doctor}
+                      />
+                    </Space>
+                  ),
+                },
+              ]}
               pagination={false}
             ></Table>
             <div className="text-right mt-2">

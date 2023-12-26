@@ -8,7 +8,8 @@
       "address": "",
       "image": "http://res.cloudinary.com/tranvanha/image/upload/v1703219930/lhffpbenjnmpyeiftkr1.jpg",
       "role": "user",
-      "id": 1
+      "id": 1,
+      "blocked": false
     },
     {
       "email": "getbackers0308@gmail.com",
@@ -18,7 +19,8 @@
       "address": "Quảng Ninh",
       "image": "http://res.cloudinary.com/tranvanha/image/upload/v1703220200/cctk9zlavlcrqj6zwezx.jpg",
       "role": "user",
-      "id": 2
+      "id": 2,
+      "blocked": true
     },
     {
       "email": "getbackers03082@gmail.com",
@@ -26,9 +28,70 @@
       "name": "Hà Trần ",
       "phone": "0396071515",
       "address": "Quảng Ninh",
+      "image": "http://res.cloudinary.com/tranvanha/image/upload/v1703582134/kd3oopfjp8etqqyrimcv.jpg",
+      "role": "admin",
+      "id": 3,
+      "block": false
+    },
+    {
+      "email": "getbackers03054@gmail.com",
+      "password": "$2a$10$L4D5LtyTKPegmIAGBrBwmuSr9cdSUVB3LBRQ3QVYREpSaCOofnclO",
+      "name": "Hà Trần",
+      "phone": "",
+      "address": "",
       "image": "https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg",
       "role": "user",
-      "id": 3
+      "id": 4
+    },
+    {
+      "email": "getbackers03085@gmail.com",
+      "password": "$2a$10$aY2FMiaQdBLYXbbrjPTvsukmWwymsOqmTQgCBRnRHFpghOFQh.Xre",
+      "name": "Hà Trần",
+      "phone": "",
+      "address": "",
+      "image": "https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg",
+      "role": "user",
+      "id": 5
+    },
+    {
+      "email": "getbackers03086@gmail.com",
+      "password": "$2a$10$dIe0GcQmlmbJUPr.CDzg9.gjpoKRZNiyEO8OjMXehOEUM88zGjXPu",
+      "name": "Hà Trần",
+      "phone": "",
+      "address": "",
+      "image": "https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg",
+      "role": "user",
+      "id": 6
+    },
+    {
+      "email": "getbackers03087@gmail.com",
+      "password": "$2a$10$cCglV2/KfMuT1Hve5qatF.psqNQZGOVkoTOkiNOSmvxQb3PsDZHwW",
+      "name": "Hà Trần",
+      "phone": "",
+      "address": "",
+      "image": "https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg",
+      "role": "user",
+      "id": 7
+    },
+    {
+      "email": "getbackers03088@gmail.com",
+      "password": "$2a$10$hXBDoONaiRZS/rKGYursuepYRxtqgQCVZAgyzs4e/4NGPzdyRPOei",
+      "name": "Hà Trần",
+      "phone": "",
+      "address": "",
+      "image": "https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg",
+      "role": "user",
+      "id": 8
+    },
+    {
+      "email": "getbackers03089@gmail.com",
+      "password": "$2a$10$BNAkVUuE.HXkBpPpg90qdO.nlvXHmq1YSU1QGSXZoGsJR8TQTDsYy",
+      "name": "Hà Trần",
+      "phone": "",
+      "address": "",
+      "image": "https://static.vecteezy.com/system/resources/previews/018/765/757/original/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg",
+      "role": "user",
+      "id": 9
     }
   ],
   "clinics": [
@@ -1272,91 +1335,12 @@
   ],
   "bookings": [
     {
-      "doctor_id": 2,
-      "doctor_name": "BS.CKI Trần Thị Mỹ Nga",
+      "doctor_id": 3,
+      "doctor_name": "BS.CKI Hồ Thanh Tiểng",
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684835824_646c8df08ab6a1.31785038.jpg?w=256&q=100",
       "user_id": 2,
-      "datetime": "2023-12-26",
+      "datetime": "2023-12-27",
       "timebooking": "8:30 - 9:00",
-      "clinic_name": "Phòng khám Đa khoa Thành Công",
-      "department_name": "Nha Khoa",
-      "branch_id": "Chi nhánh cầu giấy",
-      "price": 100000,
-      "status": "request",
-      "name": "Hà Trần 4",
-      "phone": "0396071515",
-      "email": "getbackers0308@gmail.com",
-      "id": 1
-    },
-    {
-      "doctor_id": 2,
-      "doctor_name": "BS.CKI Trần Thị Mỹ Nga",
-      "user_id": 2,
-      "datetime": "2023-12-26",
-      "timebooking": "10:00 - 10:30",
-      "clinic_name": "Phòng khám Đa khoa Thành Công",
-      "department_name": "Nha Khoa",
-      "branch_id": "Chi nhánh cầu giấy",
-      "price": 100000,
-      "status": "request",
-      "name": "Hà Trần 4",
-      "phone": "0396071515",
-      "email": "getbackers0308@gmail.com",
-      "id": 2
-    },
-    {
-      "doctor_id": 21,
-      "doctor_name": "BS. Phùng Văn Thạnh",
-      "user_id": 2,
-      "datetime": "2023-12-26",
-      "timebooking": "8:30 - 9:00",
-      "clinic_name": "Phòng khám Đa khoa Thành Công",
-      "department_name": "Đa Khoa",
-      "branch_id": "Chi nhánh bắc từ liêm",
-      "price": 200000,
-      "status": "request",
-      "name": "Hà Trần 4",
-      "phone": "0396071515",
-      "email": "getbackers0308@gmail.com",
-      "id": 3
-    },
-    {
-      "doctor_id": 21,
-      "doctor_name": "BS. Phùng Văn Thạnh",
-      "user_id": 2,
-      "datetime": "2023-12-26",
-      "timebooking": "9:00 - 9:30",
-      "clinic_name": "Phòng khám Đa khoa Thành Công",
-      "department_name": "Đa Khoa",
-      "branch_id": "Chi nhánh bắc từ liêm",
-      "price": 200000,
-      "status": "request",
-      "name": "Hà Trần 4",
-      "phone": "0396071515",
-      "email": "getbackers0308@gmail.com",
-      "id": 4
-    },
-    {
-      "doctor_id": 21,
-      "doctor_name": "BS. Phùng Văn Thạnh",
-      "user_id": 2,
-      "datetime": "2023-12-26",
-      "timebooking": "10:00 - 10:30",
-      "clinic_name": "Phòng khám Đa khoa Thành Công",
-      "department_name": "Đa Khoa",
-      "branch_id": "Chi nhánh bắc từ liêm",
-      "price": 200000,
-      "status": "request",
-      "name": "Hà Trần 4",
-      "phone": "0396071515",
-      "email": "getbackers0308@gmail.com",
-      "id": 5
-    },
-    {
-      "doctor_id": 21,
-      "doctor_name": "BS. Phùng Văn Thạnh",
-      "user_id": 2,
-      "datetime": "2023-12-26",
-      "timebooking": "11:00 - 11:30",
       "clinic_name": "Phòng khám Đa khoa Thành Công",
       "department_name": "Đa Khoa",
       "branch_id": "Chi nhánh bắc từ liêm",
@@ -1366,6 +1350,23 @@
       "phone": "0396071515",
       "email": "getbackers0308@gmail.com",
       "id": 6
+    },
+    {
+      "doctor_id": 1,
+      "doctor_name": "BS.CKI Vũ Thúy Bình",
+      "image": "https://cdn-healthcare.hellohealthgroup.com/2023/05/1684828082_646c6fb2045d63.74308483.jpg?w=256&q=100",
+      "user_id": 3,
+      "datetime": "2023-12-26",
+      "timebooking": "9:30 - 10:00",
+      "clinic_name": "Phòng khám Đa khoa Thành Công",
+      "department_name": "Da Liễu",
+      "branch_id": "Chi nhánh cầu giấy",
+      "price": 100000,
+      "status": "request",
+      "name": "Hà Trần ",
+      "phone": "0396071515",
+      "email": "getbackers03082@gmail.com",
+      "id": 7
     }
   ]
 }

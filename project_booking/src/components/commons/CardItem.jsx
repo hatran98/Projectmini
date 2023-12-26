@@ -1,7 +1,10 @@
 import React from "react";
 import { formatCurrency } from "../../helpers/FormatCurrency";
+import { Button } from "antd";
+import { useNavigate } from "react-router-dom";
 
 function CardItem({ doctor }) {
+  const navigate = useNavigate();
   return (
     <div className="border rounded mt-3">
       <div className="flex p-2">
@@ -34,9 +37,14 @@ function CardItem({ doctor }) {
             <p className="text-xs">{doctor.branch.address}</p>
           </div>
         </div>
-        <button className="bg-blue-600 text-white rounded ml-2 h-fit p-2">
+        <Button
+          className="bg-blue-600 text-white rounded-xl ml-2 h-fit p-2"
+          onClick={() => {
+            navigate(`/bac-si/${doctor.id}`);
+          }}
+        >
           Đặt lịch hẹn
-        </button>
+        </Button>
       </div>
     </div>
   );

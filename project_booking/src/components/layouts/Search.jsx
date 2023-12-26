@@ -7,7 +7,7 @@ function Search({ handleSearch, searchParams, setSearchParams }) {
 
   return (
     <div className="max-w-6xl container mx-auto shadow pb-4">
-      <div className="flex sm:flex-row bg-slate-50">
+      {/* <div className="flex sm:flex-row bg-slate-50">
         <button className="border-none rounded p-5 text-slate-500 font-semibold bg-slate-50">
           Bệnh viện và Phòng Khám
         </button>
@@ -20,7 +20,7 @@ function Search({ handleSearch, searchParams, setSearchParams }) {
         <button className="border-none rounded p-5 text-slate-500 font-semibold bg-slate-50">
           Chuyên khoa
         </button>
-      </div>
+      </div> */}
       <div className="flex h-12 justify-center gap-4 mt-4 max-w-4xl ml-4">
         <select
           className="text-base"

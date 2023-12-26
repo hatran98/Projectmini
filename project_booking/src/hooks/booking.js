@@ -1,9 +1,13 @@
 import { bookingState, bookingsState } from "../stores/Booking/Booking";
 import { useRecoilState } from "recoil";
-import { createBooking, getBooking, getBookingById } from "../axios/booking";
+import {
+  createBooking,
+  getBooking,
+  getBookingById,
+  deleteBooking,
+} from "../axios/booking";
 import { useEffect, useState } from "react";
 export const useBooking = (id, page) => {
-  console.log("hâh,", page);
   useEffect(() => {
     getBookings();
   }, [id, page]);
@@ -32,5 +36,22 @@ export const useBooking = (id, page) => {
       console.log(error);
     }
   };
-  return { createdBooking, inforBooking, getBookings, bookings, totalCount };
+  const deleteBookings = async (booking_id) => {
+    try {
+      const response = await deleteBooking(booking_id);
+      if (response.status === 200) {
+        getBookings();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  return {
+    createdBooking,
+    inforBooking,
+    getBookings,
+    bookings,
+    totalCount,
+    deleteBookings,
+  };
 };

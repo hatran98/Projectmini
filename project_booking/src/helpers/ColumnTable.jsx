@@ -1,5 +1,4 @@
 import { formatCurrency } from "./FormatCurrency";
-
 const Columns = [
   {
     title: "ID",

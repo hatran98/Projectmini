@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Datetime from "../commons/Datetime";
 import { timemorning, timeafternoon } from "../../helpers/WorkTime";
 import ButtonCustom from "../commons/Button";
@@ -6,17 +6,28 @@ import ModalCustom from "./ModalCustom";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useBooking } from "../../hooks/booking";
+import { convertTimeStringToDate } from "../../helpers/FormatTime";
 function Booking({ doctor, user }) {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const [activeButton, setActiveButton] = useState(1);
   const [activeButton2, setActiveButton2] = useState(1);
   const [activeButton3, setActiveButton3] = useState(null);
   const [checkActive, setCheckActive] = useState(false);
   const [selectedDatetime, setSelectedDatetime] = useState(null);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [booking, setBooking] = useState({});
   const { createdBooking } = useBooking();
   const navigate = useNavigate();
-
   const showModal = () => {
     setIsModalOpen(true);
     const timebookingStart =
@@ -31,6 +42,7 @@ function Booking({ doctor, user }) {
     setBooking({
       doctor_id: doctor.id,
       doctor_name: doctor.name,
+      image: doctor.image,
       user_id: user.id,
       datetime: selectedDatetime?.$d?.toISOString().split("T")[0],
       timebooking: timebookingRange,
@@ -62,6 +74,7 @@ function Booking({ doctor, user }) {
 
   const handleDatetimeChange = (selectedDatetime) => {
     setSelectedDatetime(selectedDatetime);
+    setActiveButton3(null);
   };
 
   return (
@@ -128,9 +141,22 @@ function Booking({ doctor, user }) {
                           activeButton3 === t.id
                             ? "bg-blue-600 border-blue-600 text-white"
                             : ""
+                        } ${
+                          currentTime > convertTimeStringToDate(t.start) &&
+                          selectedDatetime &&
+                          selectedDatetime.$D <= currentTime.getDate()
+                            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                            : ""
                         }`}
                         key={t.id}
-                        onClick={() => setActiveButton3(t.id)}
+                        disabled={
+                          currentTime > convertTimeStringToDate(t.start) &&
+                          selectedDatetime &&
+                          selectedDatetime.$D <= currentTime.getDate()
+                        }
+                        onClick={() => {
+                          setActiveButton3(t.id);
+                        }}
                       >
                         {t.start} - {t.end}{" "}
                       </button>
@@ -141,8 +167,19 @@ function Booking({ doctor, user }) {
                           activeButton3 === t.id
                             ? "bg-blue-600 border-blue-600 text-white"
                             : ""
+                        } ${
+                          currentTime > convertTimeStringToDate(t.start) &&
+                          selectedDatetime &&
+                          selectedDatetime.$D <= currentTime.getDate()
+                            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                            : ""
                         }`}
                         key={t.id}
+                        disabled={
+                          currentTime > convertTimeStringToDate(t.start) &&
+                          selectedDatetime &&
+                          selectedDatetime.$D <= currentTime.getDate()
+                        }
                         onClick={() => setActiveButton3(t.id)}
                       >
                         {t.start} - {t.end}{" "}

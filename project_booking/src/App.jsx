@@ -7,7 +7,11 @@ import { ToastContainer } from "react-toastify";
 import DetailPage from "./pages/User/DetailDoctor";
 import List from "./pages/User/List";
 import Profile from "./pages/User/Profile";
-import DashBoard from "./pages/Admin/DashBoard";
+import DashBoard from "./pages/Admin/pages/DashBoard";
+import UserPanel from "./pages/Admin/pages/UserPanel";
+import DoctorPanel from "./pages/Admin/pages/DoctorPanel";
+import BookingPanel from "./pages/Admin/pages/BookingPanel";
+import Sidebar from "./pages/Admin/layouts/Sidebar";
 
 function App() {
   return (
@@ -18,7 +22,10 @@ function App() {
         <Route path={`/bac-si/:id`} element={<DetailPage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/care/tat-ca/bac-si" element={<List />} />
-        <Route path="/dashboard" element={<DashBoard />} />
+        <Route path="/admin/dashboard" element={<DashBoard />} />
+        <Route path="/admin/user" element={<UserPanel />} />
+        <Route path="/admin/doctor" element={<DoctorPanel />} />
+        <Route path="/admin/booking" element={<BookingPanel />} />
       </Routes>
       <ToastContainer
         position="bottom-right"
