@@ -8,12 +8,14 @@ export const getBooking = () => {
   return instance_token.get("/bookings");
 };
 
-export const getBookingById = (id, page) => {
-  return instance_token.get(`/bookings?user_id=${id}&_page=${page}&_limit=4`);
+export const getBookingById = (id, page, limit) => {
+  return instance_token.get(
+    `/bookings?user_id=${id}&_page=${page}&_limit=${limit}`
+  );
 };
 
-export const updateBooking = (id, data) => {
-  return instance_token.patch(`/bookings/${id}`, data);
+export const updateBooking = (id, status) => {
+  return instance_token.patch(`/bookings/${id}`, status);
 };
 
 export const deleteBooking = (id) => {
@@ -22,4 +24,10 @@ export const deleteBooking = (id) => {
 
 export const getBookingByUserId = (id) => {
   return instance_token.get(`/bookings?user_id=${id}`);
+};
+
+export const getBookingByDoctorId = (id, page, limit) => {
+  return instance_token.get(
+    `/bookings?doctor_id=${id}&_page=${page}}&_limit=${limit}`
+  );
 };

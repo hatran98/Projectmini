@@ -1,14 +1,17 @@
 import { jwtDecode } from "jwt-decode";
 import { useRecoilState } from "recoil";
-import { User } from "../stores/User/CheckUser";
-import { useEffect } from "react";
+import { User, Users } from "../stores/User/CheckUser";
+import { useEffect, useState } from "react";
 import {
   getUser,
   updateImage,
   updateUser,
   getUsers,
   blockUser,
+  createUser,
+  deleteUser,
 } from "../axios/users";
+import { toast } from "react-toastify";
 export const useUser = () => {
   const [user, setUser] = useRecoilState(User);
   useEffect(() => {
@@ -34,9 +37,8 @@ export const useUser = () => {
 
   return { user, checkUser };
 };
-
 export const useBlock = () => {
-  const [users, setUsers] = useRecoilState(User);
+  const [users, setUsers] = useRecoilState(Users);
 
   const block = async (id, data) => {
     try {
@@ -51,26 +53,39 @@ export const useBlock = () => {
       console.error(error);
     }
   };
+  const deletedUser = async (id) => {
+    try {
+      const response = await deleteUser(id);
+      if (response.data) {
+        const updatedUsers = users.filter((user) => user.id !== id);
+        setUsers(updatedUsers);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-  return { block, users };
+  return { block, users, deletedUser };
 };
 
-export const useUsers = (role) => {
-  const [users, setUsers] = useRecoilState(User);
+export const useUsers = (email, role, page, limit) => {
+  const [users, setUsers] = useRecoilState(Users);
+  const [totalCount, setTotalCount] = useState(0);
   useEffect(() => {
     getUserss();
-  }, []);
+  }, [role, page, limit]);
   const getUserss = async () => {
     try {
-      const response = await getUsers(role);
+      const response = await getUsers(email, role, page, limit);
       if (response.data) {
+        setTotalCount(response.headers["x-total-count"]);
         setUsers(response.data);
       }
     } catch (error) {
       console.error(error);
     }
   };
-  return { users, getUserss };
+  return { users, getUserss, totalCount };
 };
 export const useUpload = () => {
   const [user, setUser] = useRecoilState(User);
@@ -106,4 +121,28 @@ export const useUpdateUser = () => {
   };
 
   return { user, updateInforUser };
+};
+
+export const useCreatedUser = () => {
+  const [users, setUsers] = useRecoilState(Users);
+  const createdUser = async (data) => {
+    try {
+      const response = await createUser(data);
+      if (response.status === 201) {
+        const newUser = response.data.user;
+        const updatedUsers = [...users, newUser];
+        setUsers(updatedUsers);
+        toast.success("Tạo tài khoản thành công!", {
+          position: "top-right",
+          autoClose: 5000,
+        });
+      }
+    } catch (err) {
+      toast.error("Tạo tài khoản thất bại", {
+        position: "top-right",
+        autoClose: 5000,
+      });
+    }
+  };
+  return { createdUser, users };
 };

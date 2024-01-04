@@ -2,8 +2,11 @@ import React from "react";
 import { formatCurrency } from "../../helpers/FormatCurrency";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../../hooks/user";
+import Swal from "sweetalert2";
 
 function CardItem({ doctor }) {
+  const access_token = JSON.parse(localStorage.getItem("access_token"));
   const navigate = useNavigate();
   return (
     <div className="border rounded mt-3">
@@ -40,7 +43,24 @@ function CardItem({ doctor }) {
         <Button
           className="bg-blue-600 text-white rounded-xl ml-2 h-fit p-2"
           onClick={() => {
-            navigate(`/bac-si/${doctor.id}`);
+            if (access_token) {
+              navigate(`/bac-si/${doctor.id}`);
+            } else {
+              Swal.fire({
+                title: "Bạn muốn đặt lịch?",
+                text: "Hãy đăng nhập để tiếp tục!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Đăng nhập",
+                cancelButtonText: "Hủy",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  navigate("/login");
+                }
+              });
+            }
           }}
         >
           Đặt lịch hẹn

@@ -14,7 +14,7 @@ function ButtonCustom({
 
   return (
     <button
-      className={`w-1/2 ${isActive ? "border-blue-600 border-b-4" : ""}`}
+      className={`${isActive ? "border-blue-600 border-b-4 w-1/2" : "w-1/2"}`}
       key={keys}
       onClick={handleClick}
     >

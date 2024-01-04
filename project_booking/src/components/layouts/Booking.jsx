@@ -7,23 +7,18 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useBooking } from "../../hooks/booking";
 import { convertTimeStringToDate } from "../../helpers/FormatTime";
+import { Select, Button } from "antd";
 function Booking({ doctor, user }) {
   const [currentTime, setCurrentTime] = useState(new Date());
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   const [activeButton, setActiveButton] = useState(1);
   const [activeButton2, setActiveButton2] = useState(1);
   const [activeButton3, setActiveButton3] = useState(null);
   const [checkActive, setCheckActive] = useState(false);
   const [selectedDatetime, setSelectedDatetime] = useState(null);
-
+  const { bookings, getBookingByDoctor } = useBooking();
+  useEffect(() => {
+    getBookingByDoctor(doctor.id);
+  }, [doctor.id, selectedDatetime]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [booking, setBooking] = useState({});
   const { createdBooking } = useBooking();
@@ -45,6 +40,7 @@ function Booking({ doctor, user }) {
       image: doctor.image,
       user_id: user.id,
       datetime: selectedDatetime?.$d?.toISOString().split("T")[0],
+      timebooking_id: activeButton3,
       timebooking: timebookingRange,
       clinic_name: doctor.clinic_id.name,
       department_name: doctor.department_id.name,
@@ -63,7 +59,7 @@ function Booking({ doctor, user }) {
       position: "top-right",
       autoClose: 5000,
       onClick: () => {
-        navigate("/profile");
+        navigate("/history");
       },
     });
     createdBooking(booking);
@@ -77,6 +73,21 @@ function Booking({ doctor, user }) {
     setActiveButton3(null);
   };
 
+  const isSlotDisabled = (start, timeId) => {
+    const bookingIds = bookings.map((booking) => booking.timebooking_id);
+    const bookingTime = bookings.map((booking) => booking.datetime);
+    const checkBooking = bookingTime.includes(
+      selectedDatetime?.$d?.toISOString().split("T")[0]
+    );
+
+    return (
+      (currentTime > convertTimeStringToDate(start) &&
+        selectedDatetime &&
+        selectedDatetime.$D <= currentTime.getDate()) ||
+      (bookingIds.includes(timeId) && checkBooking)
+    );
+  };
+
   return (
     <div className="p-3">
       <h3 className="font-semibold text-xl">Đặt lịch ngay</h3>
@@ -84,124 +95,127 @@ function Booking({ doctor, user }) {
         Lựa chọn bác sĩ phù hợp, dịch vụ y tế cần khám và tiến hành đặt lịch
         ngay.
       </p>
-      <div className="flex justify-between border-b-[1px]">
-        <ButtonCustom title={"Bác sĩ"} isActive={activeButton} />
-      </div>
+
       <div className="mt-2">
         <div className="text-left flex flex-col">
           <p>Chi nhánh</p>
-          <select className="border rounded-xl my-2">
-            <option>{doctor.branch?.name}</option>
-          </select>
+          <Select
+            className="border rounded-xl my-2"
+            value={doctor.branch?.name}
+          >
+            <Select.Option value={doctor.branch?.name}>
+              {doctor.branch?.name}
+            </Select.Option>
+          </Select>
         </div>
+
         <div className="text-left flex flex-col">
           <p>Chuyên khoa</p>
-          <select className="border rounded-xl my-2">
-            <option>{doctor.department_id?.name}</option>
-          </select>
+          <Select
+            className="border rounded-xl my-2"
+            value={doctor.department_id?.name}
+          >
+            <Select.Option value={doctor.department_id?.name}>
+              {doctor.department_id?.name}
+            </Select.Option>
+          </Select>
         </div>
+
         <div className="text-left flex flex-col">
           <p>Bác sĩ</p>
-          <select className="border rounded-xl my-2">
-            <option>{doctor.name}</option>
-          </select>
+          <Select className="border rounded-xl my-2" value={doctor.name}>
+            <Select.Option value={doctor.name}>{doctor.name}</Select.Option>
+          </Select>
         </div>
-        <div className="border-b-4 border-blue-600 text-blue-600 font-semibold">
-          <h3>Tư vấn trực tiếp</h3>
-        </div>
-        <div className="text-sm">Vui lòng lựa chọn lịch khám bên dưới</div>
-        <div>
-          <p>Thời gian</p>
-          <Datetime onChange={handleDatetimeChange} />
-          {selectedDatetime && (
-            <>
-              <div className="flex justify-between border-b-[1px]">
-                <ButtonCustom
-                  keys={1}
-                  title={"Sáng"}
-                  setActiveButton={setActiveButton2}
-                  isActive={activeButton2 === 1}
-                  setCheckActive={setCheckActive}
-                  checkActive={false}
-                />
-                <ButtonCustom
-                  keys={2}
-                  title={"Chiều"}
-                  setActiveButton={setActiveButton2}
-                  isActive={activeButton2 === 2}
-                  setCheckActive={setCheckActive}
-                  checkActive={true}
-                />
+        {user && user.role === "user" && (
+          <>
+            <div className="text-sm my-1">
+              Vui lòng lựa chọn lịch khám bên dưới
+            </div>
+            <div className="my-2">
+              <p className="font-semibold mb-2">Thời gian:</p>
+              <div className="">
+                <Datetime onChange={handleDatetimeChange} />
+                {selectedDatetime && (
+                  <>
+                    <div className="flex justify-between border-b-[1px] mt-3">
+                      <ButtonCustom
+                        keys={1}
+                        title={"Sáng"}
+                        setActiveButton={setActiveButton2}
+                        isActive={activeButton2 === 1}
+                        setCheckActive={setCheckActive}
+                        checkActive={false}
+                      />
+                      <ButtonCustom
+                        keys={2}
+                        title={"Chiều"}
+                        setActiveButton={setActiveButton2}
+                        isActive={activeButton2 === 2}
+                        setCheckActive={setCheckActive}
+                        checkActive={true}
+                      />
+                    </div>
+                    <div className="flex flex-wrap justify-around">
+                      {!checkActive
+                        ? timemorning.map((t) => {
+                            return (
+                              <button
+                                className={`border-2 p-2 rounded-xl text-sm w-36 mt-2 ${
+                                  activeButton3 === t.id
+                                    ? "bg-blue-600 border-blue-600 text-white"
+                                    : ""
+                                } ${
+                                  isSlotDisabled(t.start, t.id)
+                                    ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                                    : ""
+                                }`}
+                                key={t.id}
+                                disabled={isSlotDisabled(t.start, t.id)}
+                                onClick={() => setActiveButton3(t.id)}
+                              >
+                                {t.start} - {t.end}{" "}
+                              </button>
+                            );
+                          })
+                        : timeafternoon.map((t) => (
+                            <button
+                              className={`border-2 p-2 rounded-xl text-sm w-36 mt-2 ${
+                                activeButton3 === t.id
+                                  ? "bg-blue-600 border-blue-600 text-white"
+                                  : ""
+                              } ${
+                                isSlotDisabled(t.start)
+                                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                                  : ""
+                              }`}
+                              key={t.id}
+                              disabled={isSlotDisabled(t.start)}
+                              onClick={() => setActiveButton3(t.id)}
+                            >
+                              {t.start} - {t.end}{" "}
+                            </button>
+                          ))}
+                    </div>
+                  </>
+                )}
               </div>
-              <div className="flex flex-wrap justify-between">
-                {!checkActive
-                  ? timemorning.map((t) => (
-                      <button
-                        className={`border-2 p-2 rounded-xl text-sm w-1/2 mt-2 ${
-                          activeButton3 === t.id
-                            ? "bg-blue-600 border-blue-600 text-white"
-                            : ""
-                        } ${
-                          currentTime > convertTimeStringToDate(t.start) &&
-                          selectedDatetime &&
-                          selectedDatetime.$D <= currentTime.getDate()
-                            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                            : ""
-                        }`}
-                        key={t.id}
-                        disabled={
-                          currentTime > convertTimeStringToDate(t.start) &&
-                          selectedDatetime &&
-                          selectedDatetime.$D <= currentTime.getDate()
-                        }
-                        onClick={() => {
-                          setActiveButton3(t.id);
-                        }}
-                      >
-                        {t.start} - {t.end}{" "}
-                      </button>
-                    ))
-                  : timeafternoon.map((t) => (
-                      <button
-                        className={`border-2 p-2 rounded-xl text-sm w-1/2 mt-2 ${
-                          activeButton3 === t.id
-                            ? "bg-blue-600 border-blue-600 text-white"
-                            : ""
-                        } ${
-                          currentTime > convertTimeStringToDate(t.start) &&
-                          selectedDatetime &&
-                          selectedDatetime.$D <= currentTime.getDate()
-                            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                            : ""
-                        }`}
-                        key={t.id}
-                        disabled={
-                          currentTime > convertTimeStringToDate(t.start) &&
-                          selectedDatetime &&
-                          selectedDatetime.$D <= currentTime.getDate()
-                        }
-                        onClick={() => setActiveButton3(t.id)}
-                      >
-                        {t.start} - {t.end}{" "}
-                      </button>
-                    ))}
-              </div>
-            </>
-          )}
-        </div>
-        <div className="flex justify-center mt-3">
-          <button
-            className={`w-56 h-12 rounded-xl ${
-              activeButton3
-                ? "hover:bg-blue-500 bg-blue-600 text-white "
-                : "bg-gray-400 text-white"
-            }`}
-            disabled={!activeButton3}
-            onClick={() => showModal()}
-          >
-            Đặt lịch hẹn
-          </button>
-        </div>
+            </div>
+            <div className="flex justify-between mt-3">
+              <Button
+                className={`w-56 h-12 rounded-xl ${
+                  activeButton3
+                    ? "hover:bg-blue-500 bg-blue-600 text-white "
+                    : "bg-gray-400 text-white"
+                }`}
+                disabled={!activeButton3}
+                onClick={() => showModal()}
+              >
+                Đặt lịch hẹn
+              </Button>
+            </div>
+          </>
+        )}
       </div>
       <ModalCustom
         handleOk={handleOk}

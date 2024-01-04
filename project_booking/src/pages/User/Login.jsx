@@ -8,9 +8,11 @@ function Login() {
   if (access_token) {
     const decodedToken = jwtDecode(access_token);
     if (decodedToken.user.role == "admin") {
-      return <Navigate to="/dashboard" />;
-    } else if (decodedToken.user.role == "user" || "doctor") {
+      return <Navigate to="/admin/dashboard" />;
+    } else if (decodedToken.user.role == "user") {
       return <Navigate to="/" />;
+    } else if (decodedToken.user.role == "doctor") {
+      return <Navigate to="/admin/booking" />;
     }
   } else {
     return <LoginUser />;

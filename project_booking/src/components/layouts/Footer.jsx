@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="bg-[#1b3250] h-[700px] ">
+    <div className="bg-[#1b3250] mt-10">
       <div className="container mx-auto max-w-[1000px] py-10">
         <div>
           <img
@@ -75,45 +75,6 @@ function Footer() {
               ></img>
             </div>
           </div>
-          <div className="flex-col sm:">
-            <p className="w-80 text-[#9aa2ac]">
-              Khám phá những trang khác thuộc tập đoàn Hello Health Group
-            </p>
-            <div className="flex h-10">
-              <img
-                src="https://cdn.hellobacsi.com/wp-content/uploads/2022/09/ID.png"
-                className="mr-2"
-              ></img>
-              <img
-                src="https://cdn.hellobacsi.com/wp-content/uploads/2022/09/TH.png"
-                className="mr-2"
-              ></img>
-              <img
-                src="https://cdn.hellobacsi.com/wp-content/uploads/2022/09/MY.png"
-                className="mr-2"
-              ></img>
-              <img
-                src="https://cdn.hellobacsi.com/wp-content/uploads/2022/09/KH.png"
-                className="mr-2"
-              ></img>
-              <img
-                src="https://cdn.hellobacsi.com/wp-content/uploads/2022/09/TW.png"
-                className="mr-2"
-              ></img>
-              <img
-                src="https://cdn.hellobacsi.com/wp-content/uploads/2022/09/MM.png"
-                className="mr-2"
-              ></img>
-              <img
-                src="https://cdn.hellobacsi.com/wp-content/uploads/2022/09/IN.png"
-                className="mr-2"
-              ></img>
-              <img
-                src="https://cdn.hellobacsi.com/wp-content/uploads/2022/09/PH.png"
-                className="mr-2"
-              ></img>
-            </div>
-          </div>
         </div>
         <hr className="mt-2"></hr>
         <div className="flex">
@@ -129,24 +90,6 @@ function Footer() {
               Giấy xác nhận cung cấp dịch vụ mạng xã hội trực tuyến số
               529/GP-BTTTT, HN ngày 03/12/2019
             </p>
-          </div>
-          <div className="w-72 flex flex-wrap mt-3 justify-end">
-            <img
-              src="https://cdn.hellobacsi.com/wp-content/uploads/2023/12/dadangkybocongthuong.png"
-              className="w-1/3 h-10"
-            ></img>
-            <img
-              src="https://cdn.hellobacsi.com/wp-content/uploads/2023/12/dadangkybocongthuong.png"
-              className="w-1/3 h-10"
-            ></img>
-            <img
-              src="https://cdn.hellobacsi.com/wp-content/uploads/2023/09/image-23.png"
-              className="w-1/3 h-10"
-            ></img>
-            <img
-              src="https://cdn.hellobacsi.com/wp-content/uploads/2023/09/image-22-1.png"
-              className="w-1/3 h-10"
-            ></img>
           </div>
         </div>
       </div>

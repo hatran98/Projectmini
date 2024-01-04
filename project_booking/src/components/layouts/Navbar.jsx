@@ -17,8 +17,8 @@ function Navbar() {
   };
 
   return (
-    <div className="p-3 shadow sticky">
-      <div className="flex justify-between flex-col sm:flex-row">
+    <div className="sm:p-3 shadow sticky pb-2">
+      <div className="flex justify-between sm:flex-row ">
         <Link to="/">
           <img
             src="https://hhg-common.hellobacsi.com/common/logo/hellobacsi.png"
@@ -27,18 +27,13 @@ function Navbar() {
         </Link>
 
         {!user.email ? (
-          <div className="gap-2 flex sm:flex-row justify-between">
-            <Link to="/care/tat-ca/bac-si">
-              <Button className="border-none shadow-none text-white bg-blue-500">
-                Đặt lịch với bác sĩ
-              </Button>
-            </Link>
+          <div className="gap-2 flex sm:flex-row justify-between flex-col">
             <Link to="/login">
               <Button className="bg-blue-500 text-white">Đăng nhập</Button>
             </Link>
           </div>
         ) : (
-          <div className="sm:gap-3 flex flex-col sm:flex-row">
+          <div className="gap-3 flex sm:justify-between sm:flex-row flex-col">
             <Link to="/care/tat-ca/bac-si">
               <Button className="border-none shadow-none bg-blue-500 text-white">
                 Đặt lịch với bác sĩ
@@ -51,12 +46,28 @@ function Navbar() {
             ></img>
 
             {isProfileVisible && (
-              <div className="flex flex-col border p-2 rounded-xl shadow absolute top-16 right-0 bg-white">
-                <Link to="/profile">
-                  <Button className="sm:mt-[0.1rem] cursor-pointer border-none shadow-none">
-                    Profile
-                  </Button>
-                </Link>
+              <div className="flex flex-col border p-2 rounded-xl shadow absolute top-16 right-0 bg-white z-10">
+                {user.role === "user" && (
+                  <Link to="/profile">
+                    <Button className="sm:mt-[0.1rem] cursor-pointer border-none shadow-none">
+                      Hồ sơ
+                    </Button>
+                  </Link>
+                )}
+                {user.role === "admin" && (
+                  <Link to="/admin/dashboard">
+                    <Button className="sm:mt-[0.1rem] cursor-pointer border-none shadow-none">
+                      Bảng điều khiển
+                    </Button>
+                  </Link>
+                )}
+                {user.role !== "admin" && user.role !== "user" && (
+                  <Link to="/admin/booking">
+                    <Button className="sm:mt-[0.1rem] cursor-pointer border-none shadow-none">
+                      Lịch sử người đặt
+                    </Button>
+                  </Link>
+                )}
                 <Link to="/">
                   <Button
                     className="border-none text-black shadow-none"

@@ -1,57 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { useUser, useUpload } from "../../hooks/user";
+import { toast } from "react-toastify";
+import { useBooking } from "../../hooks/booking";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
-import { useUpload, useUser, useUpdateUser } from "../../hooks/user";
-import { toast } from "react-toastify";
-import { useResetRecoilState } from "recoil";
-import { User } from "../../stores/User/CheckUser";
-import { useBooking } from "../../hooks/booking";
-import Infor from "../layouts/Infor";
+import History from "../layouts/History";
 import InforUser from "../layouts/InforUser";
-function ProfileScreen() {
+
+function HistoryScreen() {
   const { user } = useUser();
   const [currentPage, setCurrentPage] = useState(1);
   const { bookings, totalCount, deleteBookings } = useBooking(
     user.id,
     currentPage
   );
-
-  const isValidData = () => {
-    if (!inforUser.name || !inforUser.address || !inforUser.phone) {
-      toast.warning("Vui lòng điền đầy đủ thông tin.", {
-        position: "top-right",
-        autoClose: 5000,
-      });
-      return false;
-    }
-    return true;
-  };
   const { uploadAvatar } = useUpload();
-  const { updateInforUser } = useUpdateUser();
+  const [doctor, setDoctor] = useState({});
+  const [detailBooking, setDetailBooking] = useState({});
+
   const [checkActive, setCheckActive] = useState(true);
   const [inforUser, setInforUser] = useState({});
   const [checkUnderline, setCheckUnderline] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     if (user) {
       setInforUser(user);
     }
   }, [user]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInforUser((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = () => {
-    if (isValidData()) {
-      const { password, ...rest } = inforUser;
-      updateInforUser(rest);
-      toast.success("Cập nhật thông tin thành công");
+  const showModal = (doctor, status) => {
+    if (status === "doctor") {
+      setDoctor(doctor);
+      setDetailBooking({});
+    } else {
+      setDetailBooking(doctor);
+      setDoctor({});
     }
+    setIsModalOpen(true);
   };
 
   const uploadImage = async (file) => {
@@ -94,35 +82,51 @@ function ProfileScreen() {
     toast.success("Thay ảnh đại diện thành công");
   };
 
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
   return (
     <div>
-      <Navbar />
-      <div className=" max-w-6xl mx-auto my-10">
-        {" "}
+      <Navbar></Navbar>
+      <div className="max-w-6xl mx-auto my-10">
         <div className="grid grid-cols-4 gap-4">
           <div className="col-span-1">
             <InforUser
               user={user}
               inforUser={inforUser}
-              handleUpload={handleUpload}
+              setInforUser={setInforUser}
               checkActive={checkActive}
-              checkUnderline={checkUnderline}
-              loading={loading}
+              handleUpload={handleUpload}
               handleConfirmUpload={handleConfirmUpload}
-            />
+              checkUnderline={false}
+              setCheckUnderline={setCheckUnderline}
+              loading={loading}
+            ></InforUser>
           </div>
-          <div className="col-span-3 shadow-xl rounded-xl">
-            <Infor
-              handleChange={handleChange}
-              handleSubmit={handleSubmit}
-              inforUser={inforUser}
-            ></Infor>
+          <div className="col-span-3 mt-3">
+            {" "}
+            <History
+              useBooking={useBooking}
+              bookings={bookings}
+              totalCount={totalCount}
+              deleteBookings={deleteBookings}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              setCheckActive={setCheckActive}
+              setCheckUnderline={setCheckUnderline}
+              handlePageChange={handlePageChange}
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}
+              doctor={doctor}
+              detailBooking={detailBooking}
+              showModal={showModal}
+            ></History>
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer></Footer>
     </div>
   );
 }
 
-export default ProfileScreen;
+export default HistoryScreen;

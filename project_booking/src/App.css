@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ant-table-filter-dropdown-btns .ant-btn-primary {
+  background-color: rgb(59, 130, 246);
+}
+
+.input-addon {
+  display: inline-block;
+  width: 5em;
+  text-align: left;
+  margin-right: 8px;
+}

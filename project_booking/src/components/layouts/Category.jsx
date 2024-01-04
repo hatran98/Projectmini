@@ -13,13 +13,13 @@ function Category(props) {
     infinite: true,
     speed: 500,
     slidesToShow: slide,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 2,
           infinite: true,
           dots: false,
         },
@@ -28,23 +28,23 @@ function Category(props) {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToScroll: 1,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
   };
+
   return (
-    <div className="container max-w-6xl mx-auto">
+    <div className="container max-w-6xl mx-auto w-full">
       <h2
-        className="text-xl font-bold mt-2 cursor-pointer"
+        className="text-xl font-bold mt-2 cursor-pointer mb-3"
         onClick={() => {
           navigate("/care/tat-ca/bac-si");
         }}
@@ -52,20 +52,22 @@ function Category(props) {
         {" "}
         {content}{" "}
       </h2>
-      <Slider {...settings}>
-        {array.length > 0 &&
-          array.map((e) => (
-            <CardDoctor
-              category={category}
-              keys={e.id}
-              image={e.image}
-              name={e.name}
-              text={text}
-              department={e.department_id?.name}
-              clinic={e.clinic_id?.name}
-            />
-          ))}
-      </Slider>
+      <div className="max-w-screen-xl mx-auto">
+        <Slider {...settings}>
+          {array.length > 0 &&
+            array.map((e) => (
+              <CardDoctor
+                category={category}
+                keys={e.id}
+                image={e.image}
+                name={e.name}
+                text={text}
+                department={e.department_id?.name}
+                clinic={e.clinic_id?.name}
+              />
+            ))}
+        </Slider>
+      </div>
     </div>
   );
 }

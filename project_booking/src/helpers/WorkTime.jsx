@@ -45,7 +45,7 @@ export const day = [
 export const timemorning = [
   {
     id: 1,
-    start: "07:30",
+    start: "7:30",
     end: "8:00",
   },
   {

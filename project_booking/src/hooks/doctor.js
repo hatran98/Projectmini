@@ -5,19 +5,39 @@ import {
   doctorFilter,
 } from "../stores/Doctor/ListDoctor";
 import { useEffect, useState } from "react";
-import { getDoctorss, getDoctorbyId, filterDoctor } from "../axios/doctors";
-export const useDoctor = (name, branch, department, order) => {
+import {
+  getDoctorss,
+  getDoctorbyId,
+  filterDoctor,
+  createdDoctor,
+  updateDoctor,
+  deleteDoctor,
+} from "../axios/doctors";
+export const useDoctor = (name, branch, department, order, page, limit) => {
   const [doctors, setDoctors] = useRecoilState(doctorsState);
   const [loading, setLoading] = useState(false);
+  const [totalCount, setTotalCount] = useState(0);
   useEffect(() => {
     getDoctors();
-  }, [name, branch, department, order]);
+  }, [name, branch, department, order, page, limit]);
 
-  const getDoctors = async () => {
+  const getDoctors = async (nameSearch, page, limit) => {
     setLoading(true);
+    if (nameSearch) {
+      name = nameSearch;
+    }
     try {
-      const { data } = await getDoctorss(name, branch, department, order);
-      setDoctors(data);
+      const response = await getDoctorss(
+        name,
+        branch,
+        department,
+        order,
+        page,
+        limit
+      );
+      setTotalCount(response.headers["x-total-count"]);
+      setDoctors(response.data);
+
       setLoading(false);
     } catch (e) {
       console.log(e);
@@ -29,6 +49,7 @@ export const useDoctor = (name, branch, department, order) => {
     loading,
     doctors,
     getDoctors,
+    totalCount,
   };
 };
 
@@ -75,5 +96,82 @@ export const useFilterDoctor = (id) => {
     doctorFilter,
     getDoctor,
     loading,
+  };
+};
+export const useDoctorbyId = () => {
+  const [doctor, setDoctor] = useRecoilState(doctorState);
+  const [loading, setLoading] = useState(false);
+  const createDoctor = async (data) => {
+    setLoading(true);
+    try {
+      const { data: res } = await createdDoctor(data);
+      setDoctor(res);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+    }
+  };
+  const deletedDoctor = async (id) => {
+    setLoading(true);
+    try {
+      const { data: res } = await deleteDoctor(id);
+      setDoctor(res);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+    }
+  };
+  return {
+    deletedDoctor,
+    createDoctor,
+    loading,
+    doctor,
+  };
+};
+
+export const useUpdateDoctor = () => {
+  const [doctor, setDoctor] = useRecoilState(doctorState);
+  const [loading, setLoading] = useState(false);
+  const updatedDoctor = async (id, data) => {
+    setLoading(true);
+    try {
+      const { data: res } = await updateDoctor(id, data);
+      setDoctor(res);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+    }
+  };
+  return {
+    updatedDoctor,
+    loading,
+    doctor,
+  };
+};
+
+export const useGetDoctorByDeparment = (id) => {
+  const [doctors, setDoctor] = useRecoilState(doctorsState);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    getDoctor();
+  }, [id]);
+  const getDoctor = async () => {
+    setLoading(true);
+    try {
+      const response = await filterDoctor(id);
+      setDoctor(response.data);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+    }
+  };
+  return {
+    getDoctor,
+    loading,
+    doctors,
   };
 };

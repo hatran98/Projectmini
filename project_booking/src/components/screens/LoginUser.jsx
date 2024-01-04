@@ -5,10 +5,9 @@ import { User } from "../../stores/User/CheckUser";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { loginUser } from "../../axios/users";
-import { access_token } from "../../stores/Access_token/Access_token";
+import Swal from "sweetalert2";
 function LoginUser() {
   const [user, setUser] = useRecoilState(User);
-  const [access_Token, setAccess_Token] = useRecoilState(access_token);
   const [error, setError] = useState({
     email: "",
     password: "",
@@ -23,8 +22,11 @@ function LoginUser() {
         .then((res) => {
           if (res.status === 200) {
             const user = res.data.user;
-
-            if (user.role === "user" || user.role === "doctor") {
+            if (user.blocked) {
+              Swal.fire("Tài khoản đã bị khoá", "", "error");
+              return;
+            }
+            if (user.role === "user") {
               setUser(user);
               toast.success("Đăng nhập thành công");
               navigate("/");
@@ -32,13 +34,22 @@ function LoginUser() {
                 "access_token",
                 JSON.stringify(res.data.accessToken)
               );
-              setAccess_Token(res.data.accessToken);
               setError({
                 email: "",
                 password: "",
               });
             } else if (user.role === "admin") {
-              navigate("/dashboard");
+              navigate("/admin/dashboard");
+              localStorage.setItem(
+                "access_token",
+                JSON.stringify(res.data.accessToken)
+              );
+              setError({
+                email: "",
+                password: "",
+              });
+            } else if (user.role === "doctor") {
+              navigate("/admin/booking");
               localStorage.setItem(
                 "access_token",
                 JSON.stringify(res.data.accessToken)
@@ -70,8 +81,8 @@ function LoginUser() {
     console.log("Failed:", errorInfo);
   };
   return (
-    <div className="bg-slate-50 h-screen relative">
-      <div className="container mx-auto pt-20">
+    <div className="bg-slate-50 h-screen relative sm:pt-32">
+      <div className="container mx-auto sm:pt-20">
         <Link to="/">
           <img
             src="https://id.hellobacsi.com/assets/logos/hellobacsi.svg"
@@ -79,7 +90,7 @@ function LoginUser() {
           ></img>
         </Link>
         <Form
-          className="mx-auto mt-10 border rounded shadow"
+          className="mx-auto sm:mt-10 border rounded shadow w-full"
           name="basic"
           labelCol={{
             span: 7,
@@ -135,17 +146,10 @@ function LoginUser() {
           >
             <Input.Password />
           </Form.Item>
-          <Form.Item className="" wrapperCol={{ offset: 3, span: 16 }}>
-            <p className="text-sm ml-2">
-              Bạn chưa có tài khoản?{" "}
-              <span className="text-blue-400 underline cursor-pointer">
-                Đăng ký
-              </span>
-            </p>
-          </Form.Item>
+
           <Form.Item
             wrapperCol={{
-              offset: 8,
+              offset: 7,
               span: 16,
             }}
           >

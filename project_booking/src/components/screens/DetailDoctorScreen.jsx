@@ -4,17 +4,15 @@ import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import { Button } from "antd";
 import Category from "../layouts/Category";
-import { useDoctor } from "../../hooks/doctor";
+import { useDoctor, useGetDoctorByDeparment } from "../../hooks/doctor";
 import BreadCrumb from "../layouts/BreadCrumb";
 import Booking from "../layouts/Booking";
 import { useUser } from "../../hooks/user";
 function DetailScreen({ doctor }) {
-  const { doctors } = useDoctor();
+  const { doctors } = useGetDoctorByDeparment(doctor?.department_id?.id);
+  const filterDoctors = doctors.filter((item) => item.id !== doctor.id);
   const { user } = useUser();
-  const filterDoctors = doctors.filter(
-    (d) =>
-      d.department_id?.id === doctor.department_id?.id && d.id !== doctor.id
-  );
+
   return (
     <div>
       <Navbar />

@@ -24,7 +24,6 @@ function ListScreen() {
     order: "",
   });
   const { doctors } = useDoctor(query, branch, department, order);
-  const pageSize = 6;
   const { handleSearch } = useSearchNavigation();
   const { currentData, handlePageChange, currentPage } = usePagination(
     doctors,
@@ -72,7 +71,6 @@ function ListScreen() {
       <div className="max-w-6xl mx-auto text-right mt-3">
         <div className="w-2/3">
           <Pagination
-            pageSize={pageSize}
             total={doctors.length}
             current={currentPage}
             onChange={handlePageChange}

@@ -1,6 +1,15 @@
 import { instance, instance_token } from "./config";
-export const getUsers = (role) => {
-  return instance.get(`/users?role=${role}`);
+export const getUsers = (email, role, page, limit) => {
+  if (email) {
+    return instance.get(
+      `/users?email_like=${email}&_page=${page}&_limit=${limit}`
+    );
+  }
+  if (role) {
+    return instance.get(`/users?role=${role}&_page=${page}&_limit=${limit}`);
+  } else {
+    return instance.get(`/users?_page=${page}&_limit=${limit}`);
+  }
 };
 
 export const getUser = (id) => {

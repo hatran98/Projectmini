@@ -36,11 +36,11 @@ function HomeScreen() {
           ))}
         </div>
         <div className="flex justify-between flex-col sm:flex-row">
-          <div className="flex flex-col w-full mt-2 sm:w-1/2">
-            <h3 className="font-bold text-2xl my-2">
+          <div className="flex flex-col w-full mt-5 sm:w-1/2 justify-between">
+            <h3 className="font-bold text-2xl my-5">
               Đội ngũ chuyên gia của Hello Bacsi
             </h3>
-            <p className="text-base font-normal">
+            <p className="text-base font-normal my-3">
               Đội ngũ cố vấn của Hello Bacsi gồm các chuyên gia sức khỏe và y
               bác sĩ từ nhiều chuyên khoa, với đầy đủ chứng nhận, chứng chỉ hành
               nghề, hỗ trợ xây dựng và củng cố nội dung theo chuyên môn của
@@ -48,13 +48,13 @@ function HomeScreen() {
               y học ở những nội dung đăng tải trên Hello Bacsi, thường xuyên cập
               nhật các thông tin mới về khoa học, nghiên cứu và sức khỏe.
             </p>
-            <p className="text-base font-normal">
+            <p className="text-base font-normal my-3">
               Đội ngũ của chúng tôi làm việc không mệt mỏi để những thông tin
               hữu ích có thể dễ dàng tiếp cận đến bạn đọc, giúp bạn chủ động hơn
               trong các quyết định chăm sóc sức khỏe.
             </p>
           </div>
-          <div className="w-full flex justify-evenly items-center sm:ml-8 sm:w-1/2">
+          <div className="w-full flex justify-evenly items-center sm:ml-8 sm:w-1/2 sm:mt-16">
             {doctors.slice(3, 5).map((e) => (
               <div className="w-1/2">
                 {" "}
@@ -71,33 +71,37 @@ function HomeScreen() {
             ))}
           </div>
         </div>
-        <Category
-          category="bac-si"
-          slide={4}
-          array={doctors}
-          content="Danh sách bác sĩ"
-          text="bg-blue-300"
-        />
+        <div className="my-5 sm:w-full w-[90%]">
+          <Category
+            category="bac-si"
+            slide={4}
+            array={doctors}
+            content="Danh sách bác sĩ"
+            text="bg-blue-300"
+          />
+        </div>
       </section>
 
-      <section className="mx-auto container max-w-6xl mt-2 flex">
-        <Button className="mr-2 bg-blue-200 text-blue-500 rounded-xl w-44 h-10">
-          Bài viết nổi bật
-        </Button>
-        <Button className="w-44 h-10 rounded-xl">Bài viết mới nhất</Button>
-      </section>
-      <section className="mx-auto container max-w-6xl mt-2 flex flex-col bg-[#e3f2ff] p-5">
-        <div className="flex mb-2">
-          <h3 className="text-xl font-bold">Tâm điểm</h3>
-          <p className="text-blue-600 ml-2 text-sm mt-1">Xem tất cả </p>
-        </div>
-        <div className="flex w-full justify-between">
-          {Images.map((image) => (
-            <Image key={image.id} src={image.src} />
-          ))}
-        </div>
-      </section>
-      <Article />
+      <div className="my-10">
+        <section className="mx-auto container max-w-6xl mt-2 flex">
+          <Button className="mr-2 bg-blue-200 text-blue-500 rounded-xl w-44 h-10">
+            Bài viết nổi bật
+          </Button>
+          <Button className="w-44 h-10 rounded-xl">Bài viết mới nhất</Button>
+        </section>
+        <section className="mx-auto container max-w-6xl mt-2 flex flex-col bg-[#e3f2ff] p-5">
+          <div className="flex mb-2">
+            <h3 className="text-xl font-bold">Tâm điểm</h3>
+            <p className="text-blue-600 ml-2 text-sm mt-1">Xem tất cả </p>
+          </div>
+          <div className="flex w-full justify-between">
+            {Images.map((image) => (
+              <Image key={image.id} src={image.src} />
+            ))}
+          </div>
+        </section>
+      </div>
+      {/* <Article /> */}
       <Footer />
     </div>
   );
