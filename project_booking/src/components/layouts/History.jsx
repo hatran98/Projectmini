@@ -2,7 +2,7 @@ import React from "react";
 import Swal from "sweetalert2";
 import Columns from "../../helpers/ColumnTable";
 import BaseModal from "../../helpers/BaseModal";
-import { Pagination, Table, Space } from "antd";
+import { Table, Space } from "antd";
 import { toast } from "react-toastify";
 function History({
   bookings,
@@ -14,6 +14,7 @@ function History({
   isModalOpen,
   setIsModalOpen,
   doctor,
+  limit,
   detailBooking,
   showModal,
 }) {
@@ -104,9 +105,9 @@ function History({
           },
         ]}
         pagination={{
-          pageSize: 4,
           current: currentPage,
-          total: Math.ceil(Number(totalCount) / 1),
+          pageSize: limit,
+          total: totalCount,
           onChange: handlePageChange,
         }}
       ></Table>

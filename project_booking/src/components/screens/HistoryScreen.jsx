@@ -12,9 +12,11 @@ import InforUser from "../layouts/InforUser";
 function HistoryScreen() {
   const { user } = useUser();
   const [currentPage, setCurrentPage] = useState(1);
+  const [limit, setLimit] = useState(5);
   const { bookings, totalCount, deleteBookings } = useBooking(
     user.id,
-    currentPage
+    currentPage,
+    limit
   );
   const { uploadAvatar } = useUpload();
   const [doctor, setDoctor] = useState({});
@@ -109,6 +111,7 @@ function HistoryScreen() {
               useBooking={useBooking}
               bookings={bookings}
               totalCount={totalCount}
+              limit={limit}
               deleteBookings={deleteBookings}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
