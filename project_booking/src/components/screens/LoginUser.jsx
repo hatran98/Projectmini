@@ -146,7 +146,17 @@ function LoginUser() {
           >
             <Input.Password />
           </Form.Item>
-
+          <Form.Item wrapperCol={{ offset: 7, span: 16 }}>
+            <p>
+              Bạn chưa có tài khoản?{" "}
+              <span
+                className="text-blue-500 cursor-pointer"
+                onClick={() => navigate("/register")}
+              >
+                Đăng ký
+              </span>
+            </p>
+          </Form.Item>
           <Form.Item
             wrapperCol={{
               offset: 7,

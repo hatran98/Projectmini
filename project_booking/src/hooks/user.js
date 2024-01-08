@@ -125,6 +125,7 @@ export const useUpdateUser = () => {
 
 export const useCreatedUser = () => {
   const [users, setUsers] = useRecoilState(Users);
+
   const createdUser = async (data) => {
     try {
       const response = await createUser(data);
@@ -136,12 +137,20 @@ export const useCreatedUser = () => {
           position: "top-right",
           autoClose: 5000,
         });
+        return { success: true };
       }
     } catch (err) {
-      toast.error("Tạo tài khoản thất bại", {
-        position: "top-right",
-        autoClose: 5000,
-      });
+      if (err.response.status === 400) {
+        toast.error("Email đã tồn tại", {
+          position: "top-right",
+          autoClose: 5000,
+        });
+      } else {
+        toast.error("Tạo tài khoản thất bại", {
+          position: "top-right",
+          autoClose: 5000,
+        });
+      }
     }
   };
   return { createdUser, users };

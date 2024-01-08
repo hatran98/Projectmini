@@ -63,6 +63,7 @@ function Booking({ doctor, user }) {
       },
     });
     createdBooking(booking);
+    setActiveButton3(null);
   };
   const handleCancel = () => {
     setIsModalOpen(false);
@@ -74,8 +75,14 @@ function Booking({ doctor, user }) {
   };
 
   const isSlotDisabled = (start, timeId) => {
-    const bookingIds = bookings.map((booking) => booking.timebooking_id);
-    const bookingTime = bookings.map((booking) => booking.datetime);
+    const bookingIds = bookings
+      .filter((booking) => booking.status !== "reject")
+      .map((booking) => booking.timebooking_id);
+
+    const bookingTime = bookings
+      .filter((booking) => booking.status !== "reject")
+      .map((booking) => booking.datetime);
+
     const checkBooking = bookingTime.includes(
       selectedDatetime?.$d?.toISOString().split("T")[0]
     );

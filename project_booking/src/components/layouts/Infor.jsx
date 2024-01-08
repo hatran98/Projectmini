@@ -8,8 +8,8 @@ function Infor({ inforUser, handleChange, handleSubmit }) {
       <div className="mt-2">
         <form className="flex flex-col">
           <Input
-            label={"Họ và tên: "}
-            placeholder="Họ và tên"
+            label={"Tên người dùng: "}
+            placeholder="Nhập tên người dùng"
             value={inforUser.name}
             name="name"
             onChange={handleChange}
@@ -24,14 +24,14 @@ function Infor({ inforUser, handleChange, handleSubmit }) {
           />
           <Input
             label={"Địa chỉ: "}
-            placeholder="Địa chỉ"
+            placeholder="Nhập địa chỉ"
             value={inforUser.address}
             name="address"
             onChange={handleChange}
           />
           <Input
             label={"Số điện thoại: "}
-            placeholder="Số điện thoại"
+            placeholder="Nhập số điện thoại"
             value={inforUser.phone}
             name="phone"
             onChange={handleChange}

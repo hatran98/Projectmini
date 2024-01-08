@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="bg-[#1b3250] mt-10">
+    <div className="bg-[#1b3250] mt-10 p-3 sm:p-0">
       <div className="container mx-auto max-w-[1000px] py-10">
         <div>
           <img

@@ -20,6 +20,7 @@ export const useBooking = (id, page, limit) => {
       const response = await createBooking(booking);
       if (response.data) {
         setInforBooking(response.data);
+        setBookings([...bookings, response.data]);
       }
     } catch (error) {
       console.log(error);

@@ -17,7 +17,7 @@ function Navbar() {
   };
 
   return (
-    <div className="sm:p-3 shadow sticky pb-2">
+    <div className="p-3 shadow sticky pb-2">
       <div className="flex justify-between sm:flex-row ">
         <Link to="/">
           <img
@@ -28,8 +28,11 @@ function Navbar() {
 
         {!user.email ? (
           <div className="gap-2 flex sm:flex-row justify-between flex-col">
+            <Link to="/register">
+              <Button className="bg-blue-500 text-white w-28">Đăng ký</Button>
+            </Link>
             <Link to="/login">
-              <Button className="bg-blue-500 text-white">Đăng nhập</Button>
+              <Button className="bg-blue-500 text-white w-28">Đăng nhập</Button>
             </Link>
           </div>
         ) : (

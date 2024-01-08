@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Search from "../layouts/Search";
@@ -6,7 +6,6 @@ import Button from "../commons/Button";
 import CardItem from "../commons/CardItem";
 import { Pagination } from "antd";
 import { useDoctor } from "../../hooks/doctor";
-import usePagination from "../../hooks/pagination";
 import { useLocation } from "react-router-dom";
 import useSearchNavigation from "../../hooks/search";
 import { ScrollToTop } from "../../helpers/Scroll";
@@ -23,14 +22,26 @@ function ListScreen() {
     department: "",
     order: "",
   });
-  const { doctors } = useDoctor(query, branch, department, order);
-  const { handleSearch } = useSearchNavigation();
-  const { currentData, handlePageChange, currentPage } = usePagination(
-    doctors,
-    pageSize
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(10);
+  const { doctors, totalCount, getDoctors } = useDoctor(
+    query,
+    branch,
+    department,
+    order
   );
-  ScrollToTop(currentPage, pageSize);
 
+  const handleChange = (page) => {
+    setPage(page);
+    getDoctors("", page, limit);
+  };
+  const { handleSearch } = useSearchNavigation();
+
+  ScrollToTop(page, limit);
+
+  useEffect(() => {
+    getDoctors("", page, limit);
+  }, [page]);
   return (
     <div>
       <Navbar />
@@ -42,8 +53,8 @@ function ListScreen() {
       <Button />
       <div className="max-w-6xl mx-auto flex justify-between">
         <div className="flex flex-col w-2/3">
-          {currentData.length > 0 ? (
-            currentData.map((d) => (
+          {doctors.length > 0 ? (
+            doctors.map((d) => (
               <div key={d.id}>
                 <CardItem doctor={d} />
               </div>
@@ -71,9 +82,10 @@ function ListScreen() {
       <div className="max-w-6xl mx-auto text-right mt-3">
         <div className="w-2/3">
           <Pagination
-            total={doctors.length}
-            current={currentPage}
-            onChange={handlePageChange}
+            pageSize={limit}
+            current={page}
+            total={totalCount}
+            onChange={handleChange}
           />
         </div>
       </div>

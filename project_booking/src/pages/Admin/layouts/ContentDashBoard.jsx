@@ -6,7 +6,7 @@ function ContentDashBoard() {
   const { user } = useUser();
   const navigate = useNavigate();
 
-  return <div>ContentDashBoard</div>;
+  return <div></div>;
 }
 
 export default ContentDashBoard;

@@ -16,10 +16,20 @@ import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import DoctorRoute from "./DoctorRoute";
 import UserRoute from "./UserRoute";
+import RegisterScreen from "../components/screens/RegisterScreen";
+
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route
+        path="/register"
+        element={
+          <UserRoute>
+            <RegisterScreen />
+          </UserRoute>
+        }
+      ></Route>
       <Route
         path="/login"
         element={
@@ -37,7 +47,6 @@ const AppRoutes = () => {
           </PrivateRoute>
         }
       />
-
       <Route
         path="/history"
         element={
